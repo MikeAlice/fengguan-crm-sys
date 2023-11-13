@@ -1,0 +1,130 @@
+﻿paymentplan:
+ get:
+  summary: 分页查询付款计划
+ field:
+  plan_id: 编号
+  contract_id: 采购订单号
+  contract_name: 采购合同名称
+  supplier_id: 供应商号
+  supplier_name: 供应商名称
+  bank_id: 关联银行帐号
+  money: 金额
+  plan_date: 计划付款日期：yyyy-MM-dd 搜索该日期以后的所有数据
+  stages: 期次
+  ifpay: 是否付款
+  intro: 备注
+  create_user_id: 创建人id
+  create_time: 创建时间：yyyy-MM-dd HH:mm:ss 搜索该时间以后的所有数据
+# 付款计划模块
+fin_pay_record:
+ field:
+  record_id: 付款记录编号
+ delete:
+  summary: 删除付款记录
+ export:
+  summary: 导出付款记录
+fin_invoice_rece:
+ field:
+  contract_id: 合同号
+  supplier_id: 供应商号
+  contract_name: 合同标题
+  supplier_name: 供应商名称
+  money: 金额
+  rece_data: 收票时间
+  stages: 期次
+  name: 发票内容
+  invoice_no: 发票编号
+  intro: 备注
+  create_time: 创建时间
+  create_user_id: 创建人id
+  rece_date: 收票时间
+ post:
+  summary: 增加收票记录
+ query:
+  summary: 获取收票记录列表（分页+条件）
+
+addpayrecord:
+ post:
+  summary: 添加付款记录
+ field:
+  plan_id: 付款计划ID
+  contract_id: 合同ID
+  contract_name: 合同名称
+  supplier_id: 供应商ID
+  supplier_name: 供应商名称
+  bank_id: 银行账户
+  pay_date: 付款日期
+  money: 付款金额
+  zero_money: 去零金额
+  stages: 期次
+  intro: 备注
+  create_user_id: 创建人ID
+
+updatepayplan:
+ post:
+  summary: 修改付款计划
+
+confirmpay:
+ controller:
+  delete:
+   summary: 删除付款计划
+  put:
+   summary: 确认付款
+ field:
+  plan_id: 付款ID
+  supplier_id:  供应商ID
+  supplier_name: 供应商姓名
+  contract_id: 采购订单ID
+  contract_name: 采购订单
+  contract_money: 总金额
+  contract_zero_money: 去零金额
+  contract_pay_money: 已付金额
+  contract_invoice_money: 已收发票金额
+  pay_date: 付款日期
+  stages: 期次
+  pay_money: 付款金额
+  bank_id: 付款账户
+# 付款计划
+payplan:
+ con:
+  post: 添加付款计划
+ field:
+  supplier_id:  供应商ID
+  supplier_name: 供应商姓名
+  contract_id: 采购订单ID
+  contract_name: 采购订单
+  stages: 期次
+  money: 金额
+  date: 日期
+# 公共模块
+common-usage:
+payrecordsplan:
+ get:
+  summary: 分页查询付款记录
+ field:
+  contract_name: 采购合同名称
+  supplier_name: 供应商名称
+  pay_date: 付款日期：yyyy-MM-dd 搜索该日期以后的所有数据
+  stages: 期次
+  money: 金额
+  zero_money: 去零
+  create_user_id: 创建人id
+  create_time: 创建时间：yyyy-MM-dd HH:mm:ss 搜索该时间以后的所有数据
+  intro: 备注
+  record_id: 付款记录id
+  plan_id: 关联付款计划id
+  contract_id: 采购订单id
+  supplier_id: 供应商id
+  bank_id: 关联银行帐号id
+
+payment:
+ controller:
+  export: 导出收票记录
+ 
+payrecords:
+ controller:
+  title: 获取合同金额信息
+
+contractamount:
+ controller:
+  title: 获取付款记录列表

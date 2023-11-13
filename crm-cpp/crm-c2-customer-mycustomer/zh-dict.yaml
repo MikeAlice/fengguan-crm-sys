@@ -1,0 +1,98 @@
+﻿customer:
+ field:
+  customer_id: 客户ID
+  name: 客户名称
+  customer_no: 客户编号
+  create_user_id: 创建人员
+  create_user_name: 创建人员名称
+  owner_user_id: 归属人员
+  owner_user_name: 归属人员名称
+  create_time: 创建时间
+  next_time: 下次沟通时间
+  conn_time: 最近联系时间
+  conn_body: 最近沟通内容
+  linkman: 客户代表
+  source: 客户来源
+  grade: 客户等级
+  industry: 客户行业
+  mobile: 联系手机
+  tel: 联系电话
+  address: 联系地址
+  intro: 客户介绍
+  needs: 客户需求
+  file_path: 导入文件路径
+  success_count: 导入成功条数
+  fail_count: 导入失败条数
+  customer_id_list: 客户ID列表
+ controller: 
+  export: 导出客户
+  import: 导入客户
+  upload: 上传导入文件
+  deletefile: 删除导出文件
+  query-contact-details: 获取客户详细信息
+  post:
+   summary: 添加客户
+  put:
+   summary: 修改客户基础信息
+
+mycustormer:
+ deletecustormer:
+  summary: 删除客户
+ deletemorecustormer:
+  summary: 批量删除客户
+ hightsea:
+  summary: 投入公海
+ morehightsea:
+  summary: 批量投入公海
+ getcustormerinfo:
+  summary: 获取客户基础信息表单数据项
+ info:
+  id: 客户ID（List）
+  name: 客户名字
+  no: 客户编号
+  createrid: 创建人ID
+  ownerid: 归属人ID
+  createtime: 创建时间
+  nexttime: 下次沟通时间
+  conntime: 最近联系时间
+  connbody: 最近沟通内容
+  linkman: 客户代表
+  source: 客户来源
+  grade: 客户等级
+  indusry: 客户行业
+  mobile: 联系手机
+  tel: 联系电话
+  address: 联系地址
+  intro: 客户介绍
+  needs: 客户需求
+
+ 
+getcustomername:
+ field:
+  costomer_id: 客户的ID
+  name: 客户名称
+ controller:
+  get:
+   summary: 获取客户名称列表
+
+getcustomer:
+ field:
+  name: 客户名称关键词
+  customer_id: 客户ID
+  owner_user_id: 归属于
+  conn_time: 最近联系时间
+  conn_body: 联系内容
+  next_time: 下次联系时间
+  mobile: 手机号
+  tel: 电话
+  address: 联系地址
+ controller:
+  get:
+   summary: 获取客户列表
+ recevicecustormer:
+  summary: 领取客户
+
+hrm:
+ staff:
+  id: 员工ID
+

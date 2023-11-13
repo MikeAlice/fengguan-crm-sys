@@ -1,0 +1,12 @@
+message:
+ field: 
+  mess_type: 消息类型
+  recv_name: 收件人姓名
+  con_name: 合同名称
+  mail: 收件人邮箱
+  phone: 收件人手机号
+  mess: 扩展信息
+  sendmail: 发送邮件
+  sendsms: 发送短信  
+  sendmails: 批量发送邮件
+  sendsmss: 批量发送短信  

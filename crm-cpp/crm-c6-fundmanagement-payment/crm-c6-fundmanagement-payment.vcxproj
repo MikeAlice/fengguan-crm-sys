@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{C15310A8-0CE6-45CB-8D42-A26EB9DED02E}</ProjectGuid>
+    <RootNamespace>crmc3salescontract</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib\debug;..\lib-common\lib\debug;..\lib-mysql\lib\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;oatpp-websocket.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlntd.lib;yaml-cppd.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib;..\lib-common\lib;..\lib-mysql\lib\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;oatpp-websocket.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlnt.lib;yaml-cpp.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64\debug;..\lib-common\lib64\debug;..\lib-mysql\lib64\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;oatpp-websocket.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlntd.lib;yaml-cppd.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64;..\lib-common\lib64;..\lib-mysql\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;oatpp-websocket.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlnt.lib;yaml-cpp.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib64/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib-common\lib-common.vcxproj">
+      <Project>{213f58ad-9943-4155-8a45-1b2dab0bb8f9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-mysql\lib-mysql.vcxproj">
+      <Project>{8293b741-b019-444f-80bc-70321a47868e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-oatpp\lib-oatpp.vcxproj">
+      <Project>{3fc26f19-d665-40bd-92f1-fc4be22a38ba}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\add-pay-record\AddPayRecordController.h" />
+    <ClInclude Include="controller\add-pay-record\ContractMapper.h" />
+    <ClInclude Include="controller\add-pay-record\SupplierMapper.h" />
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\confirm_remove_pay\ConfirmRemovePayController.h" />
+    <ClInclude Include="controller\export-pay-record\ExportPayRecordController.h" /> 
+    <ClInclude Include="controller\finpayrecord\FinpayrecordController.h" />
+    <ClInclude Include="controller\fin_invoice_rece\exportcapitalrecord\ExportCapitalRecordController.h" />
+    <ClInclude Include="controller\get_payment_plan_list\QueryPaymentPlanController.h" />
+    <ClInclude Include="controller\get_payment_plan_list\testController.h" />
+    <ClInclude Include="controller\FinInvoiceRece\FinInvoiceReceController.h" />
+    <ClInclude Include="controller\contractamount\ContractamountController.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\payplan\PayPlanController.h" />
+    <ClInclude Include="controller\query-invoice-receive\QueryInvoiceReceiveController.h" />
+    <ClInclude Include="controller\remove_receipt_record\RemoveReceiptRecordController.h" />
+    <ClInclude Include="controller\payrecords\PayrecordsController.h" />
+    <ClInclude Include="dao\contractamount\ContractamountDAO.h" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="controller\update-pay-plan\UpdatePayPlanController.h" />
+    <ClInclude Include="dao\add-pay-record\AddPayRecordDAO.h" />
+    <ClInclude Include="dao\add-pay-record\ContractMapper.h" />
+    <ClInclude Include="dao\add-pay-record\SupplierMapper.h" />
+    <ClInclude Include="dao\confirmpay\ConfirmpayMapper.h" />
+    <ClInclude Include="dao\export-pay-record\ExportPayRecordDAO.h" />
+    <ClInclude Include="dao\export-pay-record\ExportPayRecordMapper.h" />
+    <ClInclude Include="dao\export_fin_invoice_recefile\ExportCapitalRecordDAO.h" />
+    <ClInclude Include="dao\export_fin_invoice_recefile\ExportCapitalRecordMapper.h" />
+    <ClInclude Include="dao\FinInvoiceRece\FinInvoiceReceDAO.h" />
+    <ClInclude Include="dao\payplan\PayPlanDAO.h" />
+    <ClInclude Include="dao\finpayrecord\FinpayrecordDAO.h" />
+    <ClInclude Include="dao\query-invoice-receive\FinInvoiceReceiveMapper.h" />
+    <ClInclude Include="dao\query-invoice-receive\QueryInvoiceReceiveDAO.h" />
+    <ClInclude Include="dao\update-pay-plan\ContractMapper.h" />
+    <ClInclude Include="dao\update-pay-plan\SupplierMapper.h" />
+    <ClInclude Include="dao\update-pay-plan\UpdatePayPlanDAO.h" />
+    <ClInclude Include="domain\do\add-pay-record\addPayRecordDO.h" />
+    <ClInclude Include="dao\get_payment_plan_list\PaymentPlanDAO.h" />
+    <ClInclude Include="dao\get_payment_plan_list\PaymentPlanMapper.h" />
+    <ClInclude Include="dao\remove_receipt_record\ReceiptRecordDAO.h" />
+    <ClInclude Include="domain\do\confirm_remove_pay\ConfirmRemovePayDO.h" />
+    <ClInclude Include="dao\payrecords\PayrecordsDAO.h" />
+    <ClInclude Include="dao\payrecords\PayrecordsMapper.h" />
+    <ClInclude Include="domain\do\contractamount\ContractamountDO.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\do\export-pay-record\ExportPayRecordDO.h" />
+    <ClInclude Include="domain\do\finpayrecord\FinpayrecordDO.h" />
+    <ClInclude Include="domain\do\fin_invoice_rece\FinCapitalRecordDO.h" />
+    <ClInclude Include="domain\do\payment_plan\PaymentPlanDO.h" />
+    <ClInclude Include="domain\do\query-invoice-receive\FinInvoiceReceiveDO.h" />
+    <ClInclude Include="domain\do\update-pay-plan\UpdatePayPlanDO.h" />
+    <ClInclude Include="domain\dto\confirm_remove_pay\ConfirmRemovePayDTO.h" />
+    <ClInclude Include="domain\dto\export-pay-record\ExportPayRecordDTO.h" />
+    <ClInclude Include="domain\dto\finpayrecord\FinpayrecordDTO.h" />
+    <ClInclude Include="domain\dto\fin_invoice_rece\ExportCapitalRecordDTO.h" />
+    <ClInclude Include="domain\dto\fin_invoice_rece\ListCapitalRecordDTO.h" />
+    <ClInclude Include="domain\dto\query-invoice-receive\FinInvoiceReceivePageDTO.h" />
+    <ClInclude Include="domain\dto\remove_receipt_record\ReceiptRecordDTO.h" />
+    <ClInclude Include="domain\do\FinInvoiceRece\FinInvoiceReceDO.h" />
+    <ClInclude Include="domain\dto\add-pay-record\AddPayRecordDTO.h" />
+    <ClInclude Include="domain\dto\FinInvoiceReceDTO.h" />
+    <ClInclude Include="domain\dto\payplan\PayPlanDTO.h" />
+    <ClInclude Include="domain\dto\update-pay-plan\UpdatePayPlanDTO.h" />
+    <ClInclude Include="domain\do\payrecords\PayrecordsDO.h" />
+    <ClInclude Include="domain\dto\contractamount\ContractamountDTO.h" />
+    <ClInclude Include="domain\dto\payrecords\PayrecordsDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="domain\query\add-pay-record\addPayRecordQuerry.h" />
+    <ClInclude Include="domain\query\capitalrecordfile\ExportCapitalRecordQuery.h" />
+    <ClInclude Include="domain\query\export_fin_invoice_recefile\ExportCapitalRecordQuery.h" />
+    <ClInclude Include="domain\query\fincapitalrecord\FinCapitalRecordQuery.h" />
+    <ClInclude Include="domain\query\query-invoice-receive\QueryInvoiceReceiveQuery.h" />
+    <ClInclude Include="domain\vo\addPayRecord\addPayRecordJsonVO.h" />
+    <ClInclude Include="domain\dto\payment_plan\PaymentPlanDTO.h" />
+    <ClInclude Include="domain\query\payment_plan\PaymentPlanQuery.h" />
+    <ClInclude Include="domain\vo\payment_plan\PaymentPlanVO.h" />
+    <ClInclude Include="domain\vo\query-invoice-receive\FinInvoiceReceivePageJsonVO.h" />
+    <ClInclude Include="domain\vo\remove_receipt_record\ReceiptRecordJsonVO.h" />
+    <ClInclude Include="domain\vo\update-pay-plan\UpdatePayPlanVO.h" />
+    <ClInclude Include="domain\query\contractamount\ContractamountQuery.h" />
+    <ClInclude Include="domain\query\payrecords\PayrecordsQuery.h" />
+    <ClInclude Include="domain\vo\contractamount\ContractamountVO.h" />
+    <ClInclude Include="domain\vo\payrecords\PayrecordsVO.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="service\confirm_remove_pay\ConfirmRemovePayService.h" />
+    <ClInclude Include="service\export-pay-record\ExportPayRecordService.h" />
+    <ClInclude Include="service\export_fin_invoice_recefile\ExportCapitalRecordService.h" />
+    <ClInclude Include="service\finpayrecord\FinpayrecordService.h" />
+    <ClInclude Include="service\get_payment_plan_list\PaymentPlanService.h" />
+    <ClInclude Include="service\query-invoice-rece\QueryInvoiceReceiveService.h" />
+    <ClInclude Include="service\remove_receipt_record\ReceiptRecordService.h" />
+    <ClInclude Include="service\FinInvoiceRece\FinInvoiceReceService.h" />
+    <ClInclude Include="service\payplan\PayPlanService.h" />
+    <ClInclude Include="service\update-pay-plan\UpdatePayPlanService.h" />
+    <ClInclude Include="service\contractamount\ContractamountService.h" />
+    <ClInclude Include="service\payrecords\PayrecordsService.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="uselib\excel\useExcel.h" />
+    <ClInclude Include="uselib\fastdfs\useFastDFS.h" />
+    <ClInclude Include="uselib\jwt\TestToken.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\confirm_remove_pay\ConfirmRemovePayController.cpp" /> 
+    <ClCompile Include="controller\finpayrecord\FinpayrecordController.cpp" />
+    <ClCompile Include="controller\fin_invoice_rece\exportcapitalrecord\ExportCapitalRecordController.cpp" />
+    <ClCompile Include="controller\get_payment_plan_list\QueryPaymentPlanController.cpp" />
+    <ClCompile Include="controller\query-invoice-receive\QueryInvoiceReceiveController.cpp" />
+    <ClCompile Include="controller\remove_receipt_record\RemoveReceiptRecordController.cpp" />
+    <ClCompile Include="controller\add-pay-record\AddPayRecordController.cpp" />
+    <ClCompile Include="controller\FinInvoiceRece\FinInvoiceReceController.cpp" />
+    <ClCompile Include="controller\payplan\PayPlanController.cpp" />
+    <ClCompile Include="controller\contractamount\ContractamountController.cpp" />
+    <ClCompile Include="controller\payrecords\PayrecordsController.cpp" />
+    <ClCompile Include="controller\Router.cpp" />
+    <ClCompile Include="controller\SystemInterceptor.cpp" />
+    <ClCompile Include="dao\confirm_remove_pay\ConfirmRemovePayDAO.cpp" />
+    <ClCompile Include="controller\update-pay-plan\UpdatePayPlanController.cpp" />
+    <ClCompile Include="dao\export-pay-record\ExportPayRecordDAO.cpp" />
+    <ClCompile Include="dao\export_fin_invoice_recefile\ExportCapitalRecordDAO.cpp" />
+    <ClCompile Include="dao\finpayrecord\FinpayrecordDAO.cpp" />
+    <ClCompile Include="dao\get_payment_plan_list\PaymentPlanDAO.cpp" />
+    <ClCompile Include="dao\query-invoice-receive\QueryInvoiceReceiveDAO.cpp" />
+    <ClCompile Include="dao\remove_receipt_record\ReceiptRecordDAO.cpp" />
+    <ClCompile Include="dao\add-pay-record\AddPayRecordDAO.cpp" />
+    <ClCompile Include="dao\FinInvoiceRece\FinInvoiceReceDAO.cpp" />
+    <ClCompile Include="dao\payplan\PayPlanDAO.cpp" />
+    <ClCompile Include="dao\update-pay-plan\UpdatePayPlanDAO.cpp" />
+    <ClCompile Include="domain\query\add-pay-record\addPayRecordQuerry.cpp" />
+    <ClCompile Include="dao\contractamount\ContractamountDAO.cpp" />
+    <ClCompile Include="dao\payrecords\PayrecordsDAO.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="service\confirm_remove_pay\ConfirmRemovePayService.cpp" />
+    <ClCompile Include="service\export-pay-record\ExportPayRecordService.cpp" />
+    <ClCompile Include="service\export_fin_invoice_recefile\ExportCapitalRecordService.cpp" />
+    <ClCompile Include="service\finpayrecord\FinpayrecordService.cpp" />
+    <ClCompile Include="service\get_payment_plan_list\PaymentPlanService.cpp" />
+    <ClCompile Include="service\remove_receipt_record\ReceiptRecordService.cpp" />
+    <ClCompile Include="service\add-pay-record\AddPayRecordService.cpp" />
+    <ClCompile Include="service\FinInvoiceRece\FinInvoiceReceService.cpp" />
+    <ClCompile Include="service\payplan\PayPlanService.cpp" />
+    <ClCompile Include="service\update-pay-plan\UpdatePayPlanService.cpp" />
+    <ClCompile Include="service\contractamount\ContractamountService.cpp" />
+    <ClCompile Include="service\payrecords\PayrecordsService.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="uselib\excel\useExcel.cpp" />
+    <ClCompile Include="uselib\fastdfs\useFastDFS.cpp" />
+    <ClCompile Include="uselib\jwt\TestToken.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

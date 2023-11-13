@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.purchasemanagement.modules.contract.mapper.PosContractListMapper">
+
+    <select id="getTotalStatistic" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractListPageVO$TotalStatistic">
+        select sum(`num`) as `totalNum`,
+               sum(`owe_money`) as `totalOweMoney`,
+               sum(`into_num`) as `totalIntoNum`
+        from `pos_contract_list`
+    </select>
+
+    <select id="getContractListPage" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractListPageVO$ContractListVO">
+        select pcl.*,
+        pc.`title` as `title`
+        from `pos_contract_list` as pcl
+        left join `pos_contract` as pc
+        on pcl.`contract_id`=pc.`contract_id`
+        <where>
+            <if test="param.goodsName != null and param.goodsName != ''">
+                pcl.`goods_name` like concat('%',#{param.goodsName},'%')
+            </if>
+            <if test="param.skuName != null and param.skuName != ''">
+                and pcl.`sku_name` like concat('%',#{param.skuName},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="getContractDetailExcelListByIds" resultType="com.zeroone.star.purchasemanagement.modules.contract.excel.ContractDetailExcel">
+        select pc.`title` as `contractName`,
+        pcl.`goods_id`,
+        pcl.`goods_id`,
+        pcl.`sku_id`,
+        pcl.`goods_name`,
+        pcl.`sku_name`,
+        pcl.`num`,
+        pcl.`sale_price`,
+        pcl.`goods_money`,
+        pcl.`into_num`
+        from `pos_contract_list` as pcl
+        left join `pos_contract` as pc
+        on pcl.`contract_id`=pc.`contract_id`
+        <where>
+            pcl.`list_id`
+            in
+            <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+</mapper>

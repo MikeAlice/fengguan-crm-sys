@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.systemmanagement.mapper.FlySysMenuMapper">
+
+    <select id="getChildId" resultType="java.lang.Integer">
+        WITH RECURSIVE cte AS (SELECT id
+                               FROM fly_sys_menu
+                               WHERE id = #{id}
+                               UNION ALL
+                               SELECT m.id
+                               FROM fly_sys_menu m
+                                        JOIN cte
+                                             ON m.parentID = cte.id)
+        SELECT id
+        FROM cte
+    </select>
+</mapper>

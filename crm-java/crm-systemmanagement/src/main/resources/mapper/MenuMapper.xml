@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.systemmanagement.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.zeroone.star.systemmanagement.entity.Menu">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="nameEn" column="name_en" jdbcType="VARCHAR"/>
+            <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="parentId" column="parentID" jdbcType="INTEGER"/>
+            <result property="sort" column="sort" jdbcType="INTEGER"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="visible" column="visible" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,name_en,
+        url,parentID,sort,
+        icon,visible
+    </sql>
+    <select id="selectMenuList" resultType="com.zeroone.star.systemmanagement.entity.Menu">
+        SELECT id,name,name_en,url,parentID,sort,visible,icon
+        FROM zocrm_sys.fly_sys_menu
+        WHERE visible = 1
+    </select>
+    <select id="selectChildrenMenu" resultType="com.zeroone.star.systemmanagement.entity.Menu">
+        SELECT id,name,name_en,url,parentID,sort,visible,icon
+        FROM zocrm_sys.fly_sys_menu
+        WHERE parentID = #{parentId}
+    </select>
+
+</mapper>

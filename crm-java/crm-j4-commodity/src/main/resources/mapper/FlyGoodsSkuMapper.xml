@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.commodity.mapper.FlyGoodsSkuMapper">
+    <select id="querySkuCount" resultType="java.lang.Integer">
+        select count(1)
+        from fly_goods fg
+        inner join fly_goods_sku fgs on fgs.goods_id = fg.goods_id
+        inner join stock_goods_sku sgs on sgs.sku_id = fgs.sku_id
+        where 1 = 1
+        <if test="query.goodsName != null and query.goodsName != ''">
+            and fgs.goods_name like concat('%',#{query.goodsName},'%')
+        </if>
+        order by fgs.create_date
+
+    </select>
+    <select id="querySku" resultType="com.zeroone.star.project.dto.j4.commodity.CommoditySkuDto">
+        select fgs.goods_id,fgs.goods_name,fg.goods_spec_format,sgs.stock,fgs.sale_price,fgs.market_price,
+               fgs.cost_price,fgs.total_cost_money,fgs.total_profit_money
+        from fly_goods fg
+        inner join fly_goods_sku fgs on fgs.goods_id = fg.goods_id
+        inner join stock_goods_sku sgs on sgs.sku_id = fgs.sku_id
+    where 1 = 1
+          <if test="query.goodsName != null and query.goodsName != ''">
+          and fgs.goods_name like concat('%',#{query.goodsName},'%')
+          </if>
+        order by fgs.create_date
+        limit #{query.pageIndex},#{query.pageSize};
+    </select>
+</mapper>

@@ -1,0 +1,49 @@
+﻿opportunities:
+ controller:
+  querySalOppoNameList: 获取销售机名称会列表（用于输入表单下拉列表）
+  querySalOppList: 获取销售机会列表（分页+条件）
+  addSalesOp: 添加销售机会
+  modifySalesOp: 修改销售机会
+  removeSalesOp: 删除销售机会（支持批量删除）
+  export-sales-opportunity: 导出销售机会
+  send_mail: 发邮件（支持批量）
+  send_sms: 发短信（支持批量）
+ field:
+  cst_chance:
+   chance_id: 销售机会ID
+   customer_id: 客户ID
+   customer_name: 客户姓名
+   linkman_id: 联系人ID
+   linkman_name: 联系人姓名
+   find_date: 发现时间
+   bill_date: 预计签单时间
+   salestage: 谈判状态
+   money: 预计金额
+   success_rate: 预计可能性成功率
+   userID: 用户ID
+   name: 销售机会主题
+   intro: 机会描述
+   status: 状态
+   create_user_id: 创建用户序号
+   create_time: 创建时间
+   context: "正文"
+
+   create_id: create_id
+   introduce: 介绍
+   update_time: 更新时间
+  smsemail:
+   recv_name: 收件人姓名
+   chance_name: 机会名称
+   mess_type: 消息类型
+   mess: 扩展信息
+   id: 销售机会编号
+   mail: 收件人邮箱
+   phone: 收件人手机号
+   success: 发送成功
+   fail: 发送失败
+  
+
+
+ 
+    
+   

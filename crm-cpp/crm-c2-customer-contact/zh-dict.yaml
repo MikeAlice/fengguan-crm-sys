@@ -1,0 +1,77 @@
+smsemail:
+ field:
+  mobile: 联系电话
+  email: 电子邮箱
+  customer_no: 客户编号
+  message: 发送的内容
+  ctype: 发送消息的类型 1：节日祝福 2：新品推荐 3：预约提醒
+  name: 客户名称
+  customer_id: 客户id
+  linkman_id: 联系人ID
+ controller:
+  send-sms:
+   summary: 发送短信接口
+  send-email: 
+   summary: 发送邮件接口
+ smsmessage:
+  success: 短信发送成功
+  fail: 短信发送失败
+ emailmessage:
+  success: 邮件发送成功
+  fail: 邮件发送失败
+ contrast_name: 合同名称
+
+contact:
+ field:
+  linkman_id: 联系人ID
+  customer_id: 客户ID
+  name: 联系人名称
+  gender: 联系人性别  1=男，0=女
+  postion: 联系人职位
+  tel: 联系人座机
+  mobile: 联系人手机
+  qicq: 联系人QQ
+  email: 联系人邮箱
+  zipcode: 联系人邮政编码
+  address: 联系人地址
+  intro: 联系人简介
+  create_user_id: 联系人创建人ID
+  create_time: 联系人创建时间
+  owner_user_id: 归属人ID
+  customer_name: 客户姓名
+  owner_user_name: 归属人姓名
+ controller:
+  customer_id: 获取客户ID
+  query-contact-name: 获取联系人名称
+  query-contact-list: 获取联系人列表
+  query-contact-key: 列表查询关键词 姓名/手机号/座机/QQ
+  get-contact-field: 获取联系人表单数据项
+  removeContact:
+   summary: 删除联系人
+  queryContactFile:
+   summary: 导出联系人
+  addContact:
+   summary: 添加联系人
+  modifyContact:
+   summary: 修改联系人
+test:
+ contact:
+  name: 张三
+customer:
+ field: 
+  name: 客户名称
+
+xlnt:
+ field:
+  customer_name: 客户名称
+  linkman_name: 联系人名称
+  gender: 性别
+  postion: 职位
+  tel: 座机
+  mobile: 手机
+  email: 邮箱
+  zipcode: 邮政编码
+  address: 地址
+  intro: 介绍
+  ower_user_name: 归属人姓名
+  create_time: 创建时间

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a3a2e787-c322-4604-b098-d640a4241ced}</ProjectGuid>
+    <RootNamespace>crmc4collectionman</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include;..\..\..\json\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib\debug;..\lib-common\lib\debug;..\lib-mysql\lib\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlntd.lib;yaml-cppd.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;oatpp-websocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include;..\..\..\json\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib;..\lib-common\lib;..\lib-mysql\lib\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlnt.lib;yaml-cpp.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;oatpp-websocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include;..\..\..\json\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64\debug;..\lib-common\lib64\debug;..\lib-mysql\lib64\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlntd.lib;yaml-cppd.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;oatpp-websocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-mysql\include;..\lib-oatpp\include;..\lib-common\include;..\..\..\json\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64;..\lib-common\lib64;..\lib-mysql\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlnt.lib;yaml-cpp.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;oatpp-websocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib64/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\BillingRecords\BillingRecordsController.cpp" />
+    <ClCompile Include="controller\collectionplans\CollectionPlansController.cpp" />
+    <ClCompile Include="controller\collectionplan\updatePayPlanController.cpp" />
+    <ClCompile Include="controller\collectionrecords\CollectionRecordsController.cpp" />
+    <ClCompile Include="controller\invoice\InvoiceController.cpp" />
+    <ClCompile Include="controller\paybackmanage\DelPayPlanController.cpp" />
+    <ClCompile Include="controller\paybackmanage\SelectAmountInfoController.cpp" />
+    <ClCompile Include="controller\Router.cpp" />
+    <ClCompile Include="controller\SystemInterceptor.cpp" />
+    <ClCompile Include="dao\invoice\InvoiceDAO.cpp" />
+    <ClCompile Include="dao\paybackmanage\DelPayPlan_GetAmountInfoDAO.cpp" />
+    <ClCompile Include="dao\collectionplans\CollectionPlansDAO.cpp" />
+    <ClCompile Include="dao\collectionrecord\CollectionRecordDAO.cpp" />
+    <ClCompile Include="domain\do\collectionrecord\CollectionRecordDO.h" />
+    <ClCompile Include="dao\collectionplan\updatePayPlanDAO.cpp" />
+    <ClCompile Include="dao\BillingRecords\BillingRecordsDAO.cpp" />
+    <ClCompile Include="domain\vo\collectionrecorde\CollectionRecordVO.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="service\invoice\InvoiceService.cpp" />
+    <ClCompile Include="service\paybackmanage\DelPayPlan_GetAmountInfoService.cpp" />
+    <ClCompile Include="service\collectionplans\CollectionPlansService.cpp" />
+    <ClCompile Include="service\collectionrecord\CollectionRecordService.cpp" />
+    <ClCompile Include="service\collectionplan\updatePayPlanService.cpp" />
+    <ClCompile Include="service\BillingRecords\BillingRecordsService.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\BillingRecords\BillingRecordsController.h" />
+    <ClInclude Include="controller\collectionplans\CollectionPlansController.h" />
+    <ClInclude Include="controller\collectionplan\updatePayPlanController.h" />
+    <ClInclude Include="controller\collectionrecords\CollectionRecordsController.h" />
+    <ClInclude Include="controller\invoice\InvoiceController.h" />
+    <ClInclude Include="controller\paybackmanage\DelPayPlanController.h" />
+    <ClInclude Include="controller\paybackmanage\SelectAmountInfoController.h" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="dao\invoice\InvoiceDAO.h" />
+    <ClInclude Include="dao\invoice\InvoiceMapper.h" />
+    <ClInclude Include="dao\paybackmanage\DelPayPlan_GetAmountInfoDAO.h" />
+    <ClInclude Include="dao\paybackmanage\GetAmountInfoMapper.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="dao\collectionplans\CollectionPlansDAO.h" />
+    <ClInclude Include="dao\collectionplans\CollectionPlansMapper.h" />
+    <ClInclude Include="domain\do\collectionplans\GetCollectionPlanListDO.h" />
+    <ClInclude Include="dao\collectionrecord\CollectionRecordDAO.h" />
+    <ClInclude Include="dao\collectionrecord\CollectionRecordMapper.h" />
+    <ClInclude Include="dao\collectionplan\updatePayPlanDAO.h" />
+    <ClInclude Include="dao\collectionplan\updatePayPlanMapper.h" />
+    <ClInclude Include="domain\do\collectionplan\updatePayPlanDO.h" />
+    <ClInclude Include="domain\do\invoice\InvoiceDo.h" />
+    <ClInclude Include="domain\dto\BillingRecords\DeleteBillingRecordsDTO.h" />
+    <ClInclude Include="domain\dto\BillingRecords\ExportBillingRecordsDTO.h" />
+    <ClInclude Include="dao\BillingRecords\BillingRecordsDAO.h" />
+    <ClInclude Include="dao\BillingRecords\BillingRecordsMapper.h" />
+    <ClInclude Include="domain\do\BillingRecords\BillingRecordsDO.h" />
+    <ClInclude Include="domain\dto\collectionplans\AddCollectionPlanDTO.h" />
+    <ClInclude Include="domain\dto\collectionplans\GetCollectionPlanListDTO.h" />
+    <ClInclude Include="domain\dto\collectionplan\updateConfirmPlanDTO.h" />
+    <ClInclude Include="domain\dto\collectionplan\updatePayPlanDTO.h" />
+    <ClInclude Include="domain\dto\collectionrecords\CollectionRecordDTO.h" />
+    <ClInclude Include="domain\dto\collectionrecords\delCollectionRecordDTO.h" />
+    <ClInclude Include="domain\dto\collectionrecords\exportCollectionRecordDTO.h" />
+    <ClInclude Include="domain\do\paybackmanage\PaybackInfoDO.h" />
+    <ClInclude Include="domain\dto\invoice\InvoiceAddDTO.h" />
+    <ClInclude Include="domain\dto\invoice\InvoiceDTO.h" />
+    <ClInclude Include="domain\dto\paybackmanage\DeletePayPlanDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="domain\query\collectionplans\CollectionPlansQuery.h" />
+    <ClInclude Include="domain\query\collectionrecord\CollectionRecordQuery.h" />
+    <ClInclude Include="domain\query\invoice\InvoiceQuery.h" />
+    <ClInclude Include="domain\query\paybackmanage\SelectAmountInfoDTO.h" />
+    <ClInclude Include="domain\query\paybackmanage\SelectAmountInfoQuery.h" />
+    <ClInclude Include="domain\vo\ExportBillingRecordsPageJsonVO.h" />
+    <ClInclude Include="domain\vo\collectionplan\updatePayPlanVO.h" />
+    <ClInclude Include="domain\vo\invoice\InvoiceVO.h" />
+    <ClInclude Include="domain\vo\paybackmanage\VectorAmountJsonVO.h" />
+    <ClInclude Include="domain\vo\collectionplans\CollectionPlansVO.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="service\collectionplans\CollectionPlansService.h" />
+    <ClInclude Include="service\collectionrecord\CollectionRecordService.h" />
+    <ClInclude Include="service\collectionplan\updatePayPlanService.h" />
+    <ClInclude Include="service\BillingRecords\BillingRecordsService.h" />
+    <ClInclude Include="service\invoice\InvoiceService.h" />
+    <ClInclude Include="service\paybackmanage\DelPayPlan_GetAmountInfoService.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib-common\lib-common.vcxproj">
+      <Project>{213f58ad-9943-4155-8a45-1b2dab0bb8f9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-mysql\lib-mysql.vcxproj">
+      <Project>{8293b741-b019-444f-80bc-70321a47868e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-oatpp\lib-oatpp.vcxproj">
+      <Project>{3fc26f19-d665-40bd-92f1-fc4be22a38ba}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zh-dict.yaml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

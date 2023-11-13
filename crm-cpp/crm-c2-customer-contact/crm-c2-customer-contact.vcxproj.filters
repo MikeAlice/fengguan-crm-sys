@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="controller\Router.cpp" />
+    <ClCompile Include="controller\smsemail\SmsEmailController.cpp" />
+    <ClCompile Include="controller\SystemInterceptor.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="controller\contact\ContactController.cpp" />
+    <ClCompile Include="service\contact\ContactService.cpp" />
+    <ClCompile Include="dao\contact\ContactDAO.cpp" />
+    <ClCompile Include="service\smsemail\SmsEmailServer.cpp" />
+    <ClCompile Include="dao\smsemail\SmsEmailDAO.cpp" />
+    <ClCompile Include="dao\getcontactfieldext\GetContactFieldExtDAO.cpp" />
+    <ClCompile Include="service\contact\GetContactFieldService.cpp" />
+    <ClCompile Include="dao\selectcontactname\SelectContactNameDAO.cpp" />
+    <ClCompile Include="service\contact\ListContactNameService.cpp" />
+    <ClCompile Include="service\contact\GetContactListService.cpp" />
+    <ClCompile Include="dao\getcontactlist\GetContactListDAO.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="controller\smsemail\SmsEmailController.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\dto\smsemail\EmailDTO.h" />
+    <ClInclude Include="domain\dto\smsemail\SmsDTO.h" />
+    <ClInclude Include="domain\dto\smsemail\SmsEmailDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="controller\contact\ContactController.h" />
+    <ClInclude Include="domain\vo\contact\NameContactVO.h" />
+    <ClInclude Include="domain\vo\contact\ListContactVO.h" />
+    <ClInclude Include="domain\dto\contact\DeleteContactDTO.h" />
+    <ClInclude Include="domain\dto\contact\AddContactDTO.h" />
+    <ClInclude Include="domain\dto\contact\UpdateContactDTO.h" />
+    <ClInclude Include="service\contact\ContactService.h" />
+    <ClInclude Include="domain\do\contact\ContactDO.h" />
+    <ClInclude Include="dao\contact\ContactDAO.h" />
+    <ClInclude Include="domain\query\contact\ExportContactQuery.h" />
+    <ClInclude Include="domain\dto\contact\ExportContactDTO.h" />
+    <ClInclude Include="dao\contact\ExportContactMapper.h" />
+    <ClInclude Include="service\smsemail\SmsEmailServer.h" />
+    <ClInclude Include="dao\smsemail\SmsEmailDAO.h" />
+    <ClInclude Include="domain\do\smsemail\SmsDO.h" />
+    <ClInclude Include="dao\smsemail\SmsEmailMapper.h" />
+    <ClInclude Include="domain\vo\smsemail\SmsEmailVO.h" />
+    <ClInclude Include="domain\do\smsemail\EmailDO.h" />
+    <ClInclude Include="domain\query\smsemail\SmsEmailQuery.h" />
+    <ClInclude Include="service\smsemail\declarative\SmsEmailApiClient.h" />
+    <ClInclude Include="domain\dto\contact\AddAndUpdateContactDTO.h" />
+    <ClInclude Include="dao\getcontactfieldext\GetContactFieldExtDAO.h" />
+    <ClInclude Include="dao\getcontactfieldext\GetContactFieldExtMapper.h" />
+    <ClInclude Include="domain\do\fieldext\FieldExtDO.h" />
+    <ClInclude Include="service\contact\GetContactFieldService.h" />
+    <ClInclude Include="domain\do\fieldext\ContactFieldDO.h" />
+    <ClInclude Include="domain\dto\contactfield\ContactFieldDTO.h" />
+    <ClInclude Include="domain\vo\contactfield\ContactFieldVO.h" />
+    <ClInclude Include="service\contact\ListContactNameService.h" />
+    <ClInclude Include="domain\query\contact\ListContectNameQuery.h" />
+    <ClInclude Include="dao\selectcontactname\SelectContactNameDAO.h" />
+    <ClInclude Include="dao\selectcontactname\SelectContactMapper.h" />
+    <ClInclude Include="domain\dto\contact\ListContactDTO.h" />
+    <ClInclude Include="domain\do\contact\ListContactDO.h" />
+    <ClInclude Include="domain\query\contact\ListContactQuery.h" />
+    <ClInclude Include="service\contact\GetContactListService.h" />
+    <ClInclude Include="dao\getcontactlist\GetContactListDAO.h" />
+    <ClInclude Include="dao\getcontactlist\GetContactListMapper.h" />
+    <ClInclude Include="domain\dto\contact\NameContactDTO.h" />
+    <ClInclude Include="domain\dto\contact\BaseContactDTO.h" />
+    <ClInclude Include="domain\do\contact\ContactListDO.h" />
+  </ItemGroup>
+</Project>

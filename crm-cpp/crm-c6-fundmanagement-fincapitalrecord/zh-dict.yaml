@@ -1,0 +1,42 @@
+﻿# 资金注入抽取
+fin_capital_record:
+ controller:
+  query:
+   summary: 查询资金注入抽取单号记录
+  add:
+   summary: 添加资金注入抽取单号记录
+  export: 
+   summary: 导出资金注入抽取单号记录（批量）
+  remove:
+   summary: 删除资金注入抽取单号（批量）
+  download:
+   summary: 下载文件
+  deletefile:
+   summary: 删除导出文件
+ field:
+  record_id: 单号 
+  type_id: 支出类型 1 = 注入, -1 抽取
+  type: 支出类型
+  money: 金额
+  bank_id: 银行账号id
+  bank_name: 开户银行名称
+  bank_card: 银行卡号
+  happen_date: 产生日期
+  create_user_id: 创建人id
+  create_user: 创建人
+  create_time: 创建时间
+  intro: 备注
+  latest_happen_date: 最近x天产生（单位：天）
+  latest_create_time: 最近x天创建（单位：天）
+
+# 银行账户
+fin_bank_account:
+ controller:
+  query:
+   summary: 获取银行账户列表数据  
+ field:
+  bank_id: 银行账号id
+  name: 开户银行名称
+  card: 银行卡号
+  address: 开户地址
+  holders: 开户人

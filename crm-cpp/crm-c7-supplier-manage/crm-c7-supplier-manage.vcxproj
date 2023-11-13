@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{28b2d127-e686-4090-8e9a-68126adddef8}</ProjectGuid>
+    <RootNamespace>crmc7suppliermanage</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib\debug;..\lib-common\lib\debug;..\lib-mysql\lib\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib
+;oatpp-swagger.lib
+;ws2_32.lib
+;mysqlcppconn.lib;
+libcrypto.lib;
+libssl.lib
+;
+xlntd.lib
+;
+yaml-cppd.lib;hiredis.lib
+;redis++.lib
+;
+rocketmq-client-cpp.lib
+;
+mongocxx.lib;
+bsoncxx.lib;
+oatpp-websocket.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib;..\lib-common\lib;..\lib-mysql\lib\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib
+;oatpp-swagger.lib
+;ws2_32.lib
+;mysqlcppconn.lib;
+libcrypto.lib;
+libssl.lib
+;
+xlnt.lib
+;
+yaml-cpp.lib;hiredis.lib
+;redis++.lib
+;
+rocketmq-client-cpp.lib
+;
+mongocxx.lib;
+bsoncxx.lib;
+oatpp-websocket.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64\debug;..\lib-common\lib64\debug;..\lib-mysql\lib64\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;xlntd.lib;yaml-cppd.lib;hiredis.lib;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib;bsoncxx.lib;oatpp-websocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64;..\lib-common\lib64;..\lib-mysql\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib
+;oatpp-swagger.lib
+;ws2_32.lib
+;mysqlcppconn.lib;
+libcrypto.lib;
+libssl.lib
+;
+xlnt.lib
+;
+yaml-cpp.lib;hiredis.lib
+;redis++.lib
+;
+rocketmq-client-cpp.lib
+;
+mongocxx.lib;
+bsoncxx.lib;
+oatpp-websocket.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib64/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="controller\supplierLinkman\basicData\BasicDataController.h" />
+    <ClInclude Include="controller\supplierLinkman\queryLinkmanName\QueryLinkmanNameController.h" />
+    <ClInclude Include="controller\supplierLinkman\removeSupLinkman\RemoveSupLinkmanController.h" />
+    <ClInclude Include="controller\supplierLinkman\modifyLinkman\ModifyLinkmanController.h" />
+    <ClInclude Include="controller\supplierLinkman\sendEmail\SendEmailController.h" />
+    <ClInclude Include="controller\supplierLinkman\SupplierLinkmanController.h" />
+    <ClInclude Include="controller\supplier\modifySupplier\ModifySupplierController.h" />
+    <ClInclude Include="controller\supplier\querySupplierName\QuerySupplierNameController.h" />
+    <ClInclude Include="controller\supplier\removeSupplier\RemoveSupplierController.h" />
+    <ClInclude Include="dao\mapper\BasicDataMapper.h" />
+    <ClInclude Include="dao\mapper\SendEmailMapper.h" />
+    <ClInclude Include="dao\supplierLinkman\selectSupLinkman\SelectSupLinkmanDAO.h" />
+    <ClInclude Include="dao\supplierLinkman\sendMessage\SendMessageDAO.h" />
+    <ClInclude Include="dao\mapper\SendMessageMapper.h" />
+    <ClInclude Include="dao\supplierLinkman\updateSupLinkman\LinkmanDAO.h" />
+    <ClInclude Include="dao\mapper\CstFieldExtMapper.h" />
+    <ClInclude Include="dao\mapper\ModifySupplierMapper.h" />
+    <ClInclude Include="dao\mapper\SelectSupLinkmanNameMapper.h" />
+    <ClInclude Include="dao\mapper\SupplierLinkmanMapper.h" />
+    <ClInclude Include="dao\mapper\SupplierListMapper.h" />
+    <ClInclude Include="dao\mapper\SupplierNameMapper.h" />
+    <ClInclude Include="dao\mapper\ToStringMapper.h" />
+    <ClInclude Include="dao\supplierLinkman\basicData\BasicDataDAO.h" />
+    <ClInclude Include="dao\supplierLinkman\deleteSupLinkman\DeleteSupLinkmanDAO.h" />
+    <ClInclude Include="dao\supplierLinkman\exportSupLinkman\ExportSupLinkmanDAO.h" />
+    <ClInclude Include="dao\supplierLinkman\insertSupLinkman\InsertSupLinkmanDAO.h" />
+    <ClInclude Include="dao\supplierLinkman\selectSupLinkmanName\SelectSupLinkmanNameDAO.h" />
+    <ClInclude Include="dao\supplierLinkman\sendEmail\SendEmailDAO.h" />
+    <ClInclude Include="dao\supplier\removeSupplier\RemoveSupplierDAO.h" />
+    <ClInclude Include="dao\supplier\selectSupFormItem\SelectSupFormItemDAO.h" />
+    <ClInclude Include="dao\supplier\selectSupplierName\SelectSupplierNameDAO.h" />
+    <ClInclude Include="dao\supplier\supplierList\SupplierListDAO.h" />
+    <ClInclude Include="dao\supplier\updateSupplier\UpdateSupplierDAO.h" />
+    <ClInclude Include="domain\do\cstFieldExt\CstFieldExtDO.h" />
+    <ClInclude Include="domain\do\supplierLinkman\SupplierLinkmanDO.h" />
+    <ClInclude Include="domain\do\supplier\SupplierDO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\BasicDataDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\LinkmanNameDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\RemoveSupLinkmanDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\LinkmanDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\SendEmailDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\SendMessageDeclDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\SendMessageDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\SupplierLinkmanDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkman\SupplierLinkmanFormItemDTO.h" />
+    <ClInclude Include="domain\dto\supplier\ModifySupplierDTO.h" />
+    <ClInclude Include="domain\dto\supplier\RemoveSupplierDTO.h" />
+    <ClInclude Include="domain\dto\supplier\SupplierDTO.h" />
+    <ClInclude Include="domain\dto\supplier\SupplierNameDTO.h" />
+    <ClInclude Include="domain\query\supplierLinkman\LinkmanNameQuery.h" />
+    <ClInclude Include="domain\query\supplierLinkman\SendEmailQuery.h" />
+    <ClInclude Include="domain\query\supplierLinkman\SupplierLinkmanQuery.h" />
+    <ClInclude Include="domain\query\supplier\SupplierNameQuery.h" />
+    <ClInclude Include="domain\query\supplier\SupplierQuery.h" />
+    <ClInclude Include="domain\vo\supplierLinkman\BasicDataVO.h" />
+    <ClInclude Include="domain\vo\supplierLinkman\LinkmanNameJsonVO.h" />
+    <ClInclude Include="domain\vo\supplierLinkman\SupplierLinkmanVO.h" />
+    <ClInclude Include="domain\vo\supplier\SupplierNameVO.h" />
+    <ClInclude Include="controller\supplierLinkman\exportSupLinkman\ExportSupLinkmanController.h" />
+    <ClInclude Include="controller\supplier\querySupFormItem\QuerySupFormItemController.h" />
+    <ClInclude Include="controller\supplier\SupplierController.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\dto\ListDTO.h" />
+    <ClInclude Include="domain\dto\supplier\SupFormItemDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="domain\query\supplierLinkman\ExportSupLinkmanQuery.h" />
+    <ClInclude Include="domain\query\supplierLinkman\SendMessageQuery.h" />
+    <ClInclude Include="domain\query\supplier\SupFormItemQuery.h" />
+    <ClInclude Include="domain\vo\supplier\SupFormItemJsonVO.h" />
+    <ClInclude Include="domain\vo\supplier\SupplierVO.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="controller\supplierLinkman\sendMessage\SendMessageController.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="service\supplierLinkman\listSupLinkman\ListSupLinkmanService.h" />
+    <ClInclude Include="service\supplierLinkman\sendMessage\declarative\SendMessageApiClient.h" />
+    <ClInclude Include="service\supplierLinkman\sendMessage\SendMessageService.h" />
+    <ClInclude Include="service\supplierLinkman\updateSupLinkman\UpdateLinkmanService.h" />
+    <ClInclude Include="service\supplierLinkman\basicData\BasicDataService.h" />
+    <ClInclude Include="service\supplierLinkman\exportSupLinkman\ExportSupLinkmanService.h" />
+    <ClInclude Include="service\supplierLinkman\listSupLinkmanName\ListSupLinkmanNameService.h" />
+    <ClInclude Include="service\supplierLinkman\removeSupLinkman\RemoveSupLinkmanService.h" />
+    <ClInclude Include="service\supplierLinkman\saveSupLinkman\SaveSupLinkmanService.h" />
+    <ClInclude Include="service\supplierLinkman\sendEmail\declarative\SendEmailApiClient.h" />
+    <ClInclude Include="service\supplierLinkman\sendEmail\SendEmailService.h" />
+    <ClInclude Include="service\supplier\listSupFormItem\ListSupFormItemService.h" />
+    <ClInclude Include="service\supplier\listSupplierName\ListSupplierNameService.h" />
+    <ClInclude Include="service\supplier\removeSupplier\RemoveSupplierService.h" />
+    <ClInclude Include="service\supplier\supplierList\SupplierListService.h" />
+    <ClInclude Include="service\supplier\updateSupplier\UpdateSupplierService.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="uselib\excel\UseExcel.h" />
+    <ClInclude Include="uselib\fastdfs\UseFastdfs.h" />
+    <ClInclude Include="uselib\jwt\TestToken.h" />
+    <ClInclude Include="uselib\redis\UseRedis.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\Router.cpp" />
+    <ClCompile Include="controller\supplierLinkman\basicData\BasicDataController.cpp" />
+    <ClCompile Include="controller\supplierLinkman\queryLinkmanName\QueryLinkmanNameController.cpp" />
+    <ClCompile Include="controller\supplierLinkman\removeSupLinkman\RemoveSupLinkmanController.cpp" />
+    <ClCompile Include="controller\supplierLinkman\modifyLinkman\ModifyLinkmanController.cpp" />
+    <ClCompile Include="controller\supplierLinkman\sendEmail\SendEmailController.cpp" />
+    <ClCompile Include="controller\supplierLinkman\SupplierLinkmanController.cpp" />
+    <ClCompile Include="controller\supplier\modifySupplier\ModifySupplierController.cpp" />
+    <ClCompile Include="controller\supplier\querySupplierName\QuerySupplierNameController.cpp" />
+    <ClCompile Include="controller\supplierLinkman\exportSupLinkman\ExportSupLinkmanController.cpp" />
+    <ClCompile Include="controller\supplier\querySupFormItem\QuerySupFormItemController.cpp" />
+    <ClCompile Include="controller\supplier\removeSupplier\RemoveSupplierController.cpp" />
+    <ClCompile Include="controller\supplier\SupplierController.cpp" />
+    <ClCompile Include="controller\SystemInterceptor.cpp" />
+    <ClCompile Include="dao\supplierLinkman\selectSupLinkman\SelectSupLinkmanDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\sendMessage\SendMessageDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\updateSupLinkman\LinkmanDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\basicData\BasicDataDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\deleteSupLinkman\DeleteSupLinkmanDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\exportSupLinkman\ExportSupLinkmanDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\insertSupLinkman\InsertSupLinkmanDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\selectSupLinkmanName\SelectSupLinkmanNameDAO.cpp" />
+    <ClCompile Include="dao\supplierLinkman\sendEmail\SendEmailDAO.cpp" />
+    <ClCompile Include="dao\supplier\removeSupplier\RemoveSupplierDAO.cpp" />
+    <ClCompile Include="dao\supplier\selectSupFormItem\SelectSupFormItemDAO.cpp" />
+    <ClCompile Include="dao\supplier\selectSupplierName\SelectSupplierNameDAO.cpp" />
+    <ClCompile Include="dao\supplier\supplierList\SupplierListDAO.cpp" />
+    <ClCompile Include="dao\supplier\updateSupplier\UpdateSupplierDAO.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="controller\supplierLinkman\sendMessage\SendMessageController.cpp" />
+    <ClCompile Include="service\supplierLinkman\listSupLinkman\ListSupLinkmanService.cpp" />
+    <ClCompile Include="service\supplierLinkman\sendMessage\SendMessageService.cpp" />
+    <ClCompile Include="service\supplierLinkman\updateSupLinkman\UpdateLinkmanService.cpp" />
+    <ClCompile Include="service\supplierLinkman\basicData\BasicDataService.cpp" />
+    <ClCompile Include="service\supplierLinkman\exportSupLinkman\ExportSupLinkmanService.cpp" />
+    <ClCompile Include="service\supplierLinkman\listSupLinkmanName\ListSupLinkmanNameService.cpp" />
+    <ClCompile Include="service\supplierLinkman\removeSupLinkman\RemoveSupLinkmanService.cpp" />
+    <ClCompile Include="service\supplierLinkman\saveSupLinkman\SaveSupLinkmanService.cpp" />
+    <ClCompile Include="service\supplierLinkman\sendEmail\SendEmailService.cpp" />
+    <ClCompile Include="service\supplier\listSupFormItem\ListSupFormItemService.cpp" />
+    <ClCompile Include="service\supplier\listSupplierName\ListSupplierNameService.cpp" />
+    <ClCompile Include="service\supplier\removeSupplier\RemoveSupplierService.cpp" />
+    <ClCompile Include="service\supplier\supplierList\SupplierListService.cpp" />
+    <ClCompile Include="service\supplier\updateSupplier\UpdateSupplierService.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="uselib\excel\UseExcel.cpp" />
+    <ClCompile Include="uselib\fastdfs\UseFastdfs.cpp" />
+    <ClCompile Include="uselib\jwt\TestToken.cpp" />
+    <ClCompile Include="uselib\redis\UseRedis.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib-common\lib-common.vcxproj">
+      <Project>{213f58ad-9943-4155-8a45-1b2dab0bb8f9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-mysql\lib-mysql.vcxproj">
+      <Project>{8293b741-b019-444f-80bc-70321a47868e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-oatpp\lib-oatpp.vcxproj">
+      <Project>{3fc26f19-d665-40bd-92f1-fc4be22a38ba}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="domain\dto\supplierLinkman\.keep" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

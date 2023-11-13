@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="controller\Router.cpp" />
+    <ClCompile Include="controller\SystemInterceptor.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="service\addandmodifycustomer\AddAndModifyCustomerService.cpp" />
+    <ClCompile Include="dao\addandmodifycustomer\AddAndModifyCustomerDAO.cpp" />
+    <ClCompile Include="controller\customerfile\ImportController.cpp" />
+    <ClCompile Include="controller\deletecustormer\DeleteCustormerController.cpp" />
+    <ClCompile Include="controller\hightsea\HightSeaController.cpp" />
+    <ClCompile Include="controller\customer\CustomerController.cpp" />
+    <ClCompile Include="domain\do\customer\CustomerDO.h" />
+    <ClCompile Include="domain\query\customerfile\ExportCustomerQuery.h" />
+    <ClCompile Include="service\customerfile\ExportCustomerService.cpp" />
+    <ClCompile Include="controller\getcustomername\GetCustomerNameController.cpp" />
+    <ClCompile Include="controller\getcustomer\GetCustomerController.cpp" />
+    <ClCompile Include="service\customerfile\ImportCustomerService.cpp" />
+    <ClCompile Include="dao\customerfile\ImportCustomerDAO.cpp" />
+    <ClCompile Include="domain\dto\customerfile\ImportResultDTO.h" />
+    <ClCompile Include="service\basecustormer\BaseCustormerService.cpp" />
+    <ClCompile Include="dao\basecustormer\BaseCustormerListDAO.cpp" />
+    <ClCompile Include="controller\customerfile\ExportController.cpp" />
+    <ClCompile Include="controller\customerfile\ImportController.cpp" />
+    <ClCompile Include="controller\deletecustormer\DeleteCustormerController.cpp" />
+    <ClCompile Include="controller\hightsea\HightSeaController.cpp" />
+    <ClCompile Include="controller\customer\CustomerController.cpp" />
+    <ClCompile Include="domain\do\customer\CustomerDO.h" />
+    <ClCompile Include="domain\query\customerfile\ExportCustomerQuery.h" />
+    <ClCompile Include="service\customerfile\ExportCustomerService.cpp" />
+    <ClCompile Include="dao\customerfile\ExportCustomerDAO.cpp" />
+    <ClCompile Include="dao\getcustomername\GetCustomerNameDAO.cpp" />
+    <ClCompile Include="service\getcustomername\GetCustomerNameService.cpp" />
+    <ClCompile Include="dao\getcustomer\GetCustomerDAO.cpp" />
+    <ClCompile Include="service\getcustomer\GetCustomerService.cpp" />
+    <ClCompile Include="controller\customerfile\ExportController.cpp" />
+    <ClCompile Include="dao\customerfile\ExportCustomerDAO.cpp" />
+    <ClCompile Include="controller\customerinfo\GetCustormerInfoController.cpp" />
+    <ClCompile Include="service\custormerbaseinfo\CustormerBaseInfoService.cpp" />
+    <ClCompile Include="dao\custormerinfo\CustormerBaseInfoDAO.cpp" />
+    <ClCompile Include="domain\dto\getcustomerdetails\GetCustomerDetailsDTO.h" />
+    <ClCompile Include="dao\getcustomerdetails\GetCustomerDetailsDAO.cpp" />
+    <ClCompile Include="controller\getcutomerdetails\GetCustomerDetailsController.cpp" />
+    <ClCompile Include="service\getcutomerdetails\GetCustomerDetailsService.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\dto\basecustomer\BaseCustomerDTO.h" />
+    <ClInclude Include="domain\dto\customer\DetailsCustomerDTO.h" />
+    <ClInclude Include="domain\dto\customer\ListCustomerDTO.h" />
+    <ClInclude Include="domain\dto\customer\NameCustomerDTO.h" />
+    <ClInclude Include="domain\dto\getcustomername\GetCustomerNameDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="domain\query\getcustomer\GetCustomerQuery.h" />
+    <ClInclude Include="controller\customerfile\ExportController.h" />
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\deletecustormer\DeleteCustormerController.h" />
+    <ClInclude Include="controller\hightsea\HightSeaController.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\dto\BaseCustomer\BaseCustomerDTO.h" />
+    <ClInclude Include="domain\dto\custormer\CustormerDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="controller\customer\CustomerController.h" />
+    <ClInclude Include="domain\dto\staff\CustormerStaffIdDTO.h" />
+    <ClInclude Include="service\customerfile\ExportCustomerService.h" />
+    <ClInclude Include="dao\customerfile\ExportCustomerDAO.h" />
+    <ClInclude Include="dao\customerfile\ExportCustomerMapper.h" />
+    <ClInclude Include="domain\do\systemuser\SystemUserDO.h" />
+    <ClInclude Include="controller\getcustomername\GetCustomerNameController.h" />
+    <ClInclude Include="controller\getcustomer\GetCustomerController.h" />
+    <ClInclude Include="service\customerfile\ImportCustomerService.h" />
+    <ClInclude Include="dao\customerfile\ImportCustomerDAO.h" />
+    <ClInclude Include="dao\customerfile\ImportCustomerMapper.h" />
+    <ClInclude Include="domain\dto\customerfile\ExportCustomerDTO.h" />
+    <ClInclude Include="domain\vo\customerfile\ImportResultVO.h" />
+    <ClInclude Include="controller\customerfile\ImportController.h" />
+    <ClInclude Include="service\basecustormer\BaseCustormerService.h" />
+    <ClInclude Include="dao\basecustormer\BaseCustormerListDAO.h" />
+    <ClInclude Include="dao\basecustormer\BaseCustormerMapper.h" />
+    <ClInclude Include="domain\do\basecustormer\BaseCustormerDO.h" />
+    <ClInclude Include="domain\do\delectecustormer\DelecteCustormerDO.h" />
+    <ClInclude Include="domain\do\hightseacustormer\HightSeaCustormerDO.h" />
+    <ClInclude Include="domain\dto\basecustomer\BaseCustormerListDTO.h" />
+    <ClInclude Include="domain\do\getcustomer\GetCustomerDO.h" />
+    <ClInclude Include="domain\do\getcustomername\GetCustomerNameDO.h" />
+    <ClInclude Include="domain\vo\getcustomer\GetCustomerVO.h" />
+    <ClInclude Include="domain\vo\getcustomername\GetCustomerNameVO.h" />
+    <ClInclude Include="controller\customerfile\ExportController.h" />
+    <ClInclude Include="controller\customerfile\ImportController.h" />
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\deletecustormer\DeleteCustormerController.h" />
+    <ClInclude Include="controller\hightsea\HightSeaController.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\dto\BaseCustomer\BaseCustomerDTO.h" />
+    <ClInclude Include="domain\dto\custormer\CustormerDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="controller\customer\CustomerController.h" />
+    <ClInclude Include="controller\getcustomer\GetCustomerController.h" />
+    <ClInclude Include="controller\getcustomername\GetCustomerNameController.h" />
+    <ClInclude Include="domain\dto\staff\CustormerStaffIdDTO.h" />
+    <ClInclude Include="service\customerfile\ExportCustomerService.h" />
+    <ClInclude Include="dao\customerfile\ExportCustomerDAO.h" />
+    <ClInclude Include="dao\customerfile\ExportCustomerMapper.h" />
+    <ClInclude Include="domain\do\systemuser\SystemUserDO.h" />
+    <ClInclude Include="dao\getcustomername\GetCustomerNameDAO.h" />
+    <ClInclude Include="dao\getcustomername\GetCustomerNameMapper.h" />
+    <ClInclude Include="service\getcustomername\GetCustomerNameService.h" />
+    <ClInclude Include="dao\getcustomer\GetCustomerDAO.h" />
+    <ClInclude Include="dao\getcustomer\GetCustomerMapper.h" />
+    <ClInclude Include="service\getcustomer\GetCustomerService.h" />
+    <ClInclude Include="controller\customerinfo\GetCustormerInfoController.h" />
+    <ClInclude Include="service\custormerbaseinfo\CustormerBaseInfoService.h" />
+    <ClInclude Include="dao\custormerinfo\CustormerBaseInfoDAO.h" />
+    <ClInclude Include="domain\do\custormerinfo\CustormerBaseInfoDO.h" />
+    <ClInclude Include="domain\vo\CuatormerJsonVO.h" />
+    <ClInclude Include="..\..\..\..\..\Users\dubian\Desktop\lsc\GetCustomerInfo.h" />
+    <ClInclude Include="domain\vo\getcustomerdetails\GetCustomerDetailsVO.h" />
+    <ClInclude Include="dao\getcustomerdetails\GetCustomerDetailsDAO.h" />
+    <ClInclude Include="dao\getcustomerdetails\GetCustomerDetailsMapper.h" />
+    <ClInclude Include="domain\query\getcutomerdetails\GetCustomerDetailsQuery.h" />
+    <ClInclude Include="controller\getcutomerdetails\GetCustomerDetailsController.h" />
+    <ClInclude Include="service\getcutomerdetails\GetCustomerDetailsService.h" />
+    <ClInclude Include="domain\dto\getcustomer\GetCustomerDTO.h" />
+    <ClInclude Include="domain\query\getcustomername\GetCustomerNameQuery.h" />
+    <ClInclude Include="domain\dto\customer\ModifyCustomerDTO.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\OtherComponent.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\Router.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\DoInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\GlobalInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\deletecustormer\DeleteCustormerController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\hightsea\HightSeaController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\BaseCustomer\BaseCustomerDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\custormer\CustormerDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\Router.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\SystemInterceptor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClInclude Include="service\addandmodifycustomer\AddAndModifyCustomerService.h" />
+    <ClInclude Include="dao\addandmodifycustomer\AddAndModifyCustomerDAO.h" />
+    <ClInclude Include="dao\addandmodifycustomer\AddAndModifyCustomerMapper.h" />
+  </ItemGroup>
+</Project>

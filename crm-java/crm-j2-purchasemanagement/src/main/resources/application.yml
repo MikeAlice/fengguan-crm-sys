@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ${sn.j2-purchasemanagement}
+  cloud:
+    sentinel:
+      transport:
+        dashboard: ${sentinel.dashboard}
+feign:
+  sentinel:
+    enabled: true
+server:
+  port: ${sp.j2-purchasemanagement}
+  servlet:
+    context-path: /purchasemanagement

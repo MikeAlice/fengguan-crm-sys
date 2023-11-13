@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c841c60f-a817-406e-b27f-9f415a9e7df9}</ProjectGuid>
+    <RootNamespace>crmc7common</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib\debug;..\lib-common\lib\debug;..\lib-mysql\lib\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;
+oatpp-swagger.lib
+;ws2_32.lib
+;mysqlcppconn.lib;
+libcrypto.lib;
+libssl.lib;xlntd.lib;yaml-cppd.lib;hiredis.lib
+;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib
+;bsoncxx.lib;oatpp-websocket.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib;..\lib-common\lib;..\lib-mysql\lib\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib
+;oatpp-swagger.lib
+;ws2_32.lib
+;mysqlcppconn.lib;
+libcrypto.lib;
+libssl.lib;xlnt.lib;yaml-cpp.lib;hiredis.lib
+;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib
+;bsoncxx.lib;oatpp-websocket.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64\debug;..\lib-common\lib64\debug;..\lib-mysql\lib64\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;
+oatpp-swagger.lib
+;ws2_32.lib
+;mysqlcppconn.lib;
+libcrypto.lib;
+libssl.lib;xlntd.lib;yaml-cppd.lib;hiredis.lib
+;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib
+;bsoncxx.lib;oatpp-websocket.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-oatpp\include;..\lib-common\include;..\lib-mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64;..\lib-common\lib64;..\lib-mysql\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib
+;oatpp-swagger.lib
+;ws2_32.lib
+;mysqlcppconn.lib;
+libcrypto.lib;
+libssl.lib;xlnt.lib;yaml-cpp.lib;hiredis.lib
+;redis++.lib;rocketmq-client-cpp.lib;mongocxx.lib
+;bsoncxx.lib;oatpp-websocket.lib
+;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib64/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\area\AreaController.h" />
+    <ClInclude Include="controller\clientManage\ClientManageController.h" />
+    <ClInclude Include="controller\dataDict\DataDictController.h" />
+    <ClInclude Include="controller\financeType\FinanceTypeController.h" />
+    <ClInclude Include="controller\queryGoodsName\QueryGoodsNameListController.h" />
+    <ClInclude Include="controller\orgStructure\OrgStructureController.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\queryLinkmanNameList\QueryLinkmanNameListController.h" />
+    <ClInclude Include="controller\querySupNameList\QuerySupNameListController.h" />
+    <ClInclude Include="controller\saleManage\SaleManageController.h" />
+    <ClInclude Include="controller\warehouse\WarehouseController.h" />
+    <ClInclude Include="domain\dto\clientManage\ClientNameDTO.h" />
+    <ClInclude Include="domain\dto\clientManage\ContactNameDTO.h" />
+    <ClInclude Include="domain\dto\dataDict\DataDictDTO.h" />
+    <ClInclude Include="domain\dto\financeType\BankAccountDTO.h" />
+    <ClInclude Include="domain\dto\financeType\CostExpenseDTO.h" />
+    <ClInclude Include="domain\dto\financeType\CostIncomeDTO.h" />
+    <ClInclude Include="domain\dto\goodsCategory\CategoryNameTreeDTO.h" />
+    <ClInclude Include="domain\dto\saleManage\SaleContractDTO.h" />
+    <ClInclude Include="domain\dto\saleManage\SaleOpportunityDTO.h" />
+    <ClInclude Include="domain\dto\supplierLinkmanManage\LinkmanNameDTO.h" />
+    <ClInclude Include="domain\dto\warehouse\WarehouseDTO.h" />
+    <ClInclude Include="domain\query\clientManage\ContactNameQuery.h" />
+    <ClInclude Include="domain\query\saleManage\SaleContractQuery.h" />
+    <ClInclude Include="domain\query\saleManage\SaleOpportunityQuery.h" />
+    <ClInclude Include="domain\query\supplierManage\SupplierNameQuery.h" />
+    <ClInclude Include="domain\vo\clientManage\ClientNameJsonVO.h" />
+    <ClInclude Include="domain\vo\clientManage\ContactNameJsonVO.h" />
+    <ClInclude Include="domain\vo\dataDict\DataDictJsonVO.h" />
+    <ClInclude Include="domain\vo\financeType\BankAccountJsonVO.h" />
+    <ClInclude Include="domain\vo\financeType\CostExpenseJsonVO.h" />
+    <ClInclude Include="domain\vo\financeType\CostIncomeJsonVO.h" />
+    <ClInclude Include="domain\vo\goodsCategory\GoodsCategoryJsonVO.h" />
+    <ClInclude Include="domain\vo\saleManage\SaleContractJsonVO.h" />
+    <ClInclude Include="domain\vo\saleManage\SaleOpportunityJsonVO.h" />
+    <ClInclude Include="domain\vo\supplierLinkmanManage\LinkmanNameJsonVO.h" />
+    <ClInclude Include="domain\dto\PullListDTO.h" />
+    <ClInclude Include="domain\dto\supplierManage\SupplierNameDTO.h" />
+    <ClInclude Include="domain\query\PullListQuery.h" />
+    <ClInclude Include="domain\vo\PullListJsonVO.h" />
+    <ClInclude Include="domain\vo\supplierManage\SupplierNameVO.h" />
+    <ClInclude Include="domain\vo\warehouse\WarehouseJsonVO.h" />
+    <ClInclude Include="service\area\AreaApiController.h" />
+    <ClInclude Include="service\clientManage\ClientManageApiClient.h" />
+    <ClInclude Include="service\dataDict\DataDictApiClient.h" />
+    <ClInclude Include="service\financeType\FinanceTypeApiClient.h" />
+    <ClInclude Include="service\goodsCategoryNameList\GoodsNameListApiClient.h" />
+    <ClInclude Include="service\listLinkmanNameList\LinkmanNameListApiClient.h" />
+    <ClInclude Include="service\listSupNameList\SupNameListApiClient.h" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\dto\ListDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="service\orgStructure\OrgStructureApiClient.h" />
+    <ClInclude Include="service\saleManage\SaleManageApiClient.h" />
+    <ClInclude Include="service\warehouse\WarehouseApiClient.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="uselib\jwt\TestToken.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\area\AreaController.cpp" />
+    <ClCompile Include="controller\clientManage\ClientManageController.cpp" />
+    <ClCompile Include="controller\dataDict\DataDictController.cpp" />
+    <ClCompile Include="controller\financeType\FinanceTypeController.cpp" />
+    <ClCompile Include="controller\queryGoodsName\QueryGoodsNameListController.cpp" />
+    <ClCompile Include="controller\orgStructure\OrgStructureController.cpp" />
+    <ClCompile Include="controller\queryLinkmanNameList\QueryLinkmanNameListController.cpp" />
+    <ClCompile Include="controller\querySupNameList\QuerySupNameListController.cpp" />
+    <ClCompile Include="controller\Router.cpp" />
+    <ClCompile Include="controller\saleManage\SaleManageController.cpp" />
+    <ClCompile Include="controller\SystemInterceptor.cpp" />
+    <ClCompile Include="controller\warehouse\WarehouseController.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="uselib\jwt\TestToken.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib-common\lib-common.vcxproj">
+      <Project>{213f58ad-9943-4155-8a45-1b2dab0bb8f9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-mysql\lib-mysql.vcxproj">
+      <Project>{8293b741-b019-444f-80bc-70321a47868e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-oatpp\lib-oatpp.vcxproj">
+      <Project>{3fc26f19-d665-40bd-92f1-fc4be22a38ba}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

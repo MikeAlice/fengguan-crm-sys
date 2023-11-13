@@ -1,0 +1,115 @@
+﻿# 公共
+common-usage:
+ field:
+  rows: 数据列表
+  id: 下拉列表通用id
+  name: 下拉列表通用值
+  keywords: 关键字搜索
+  children: 子列表
+ warehouse:
+  summary: 获取仓库名称列表
+  field: 
+   name: 仓库名称
+   id: 仓库Id
+ area:
+  summary: 获取区域名称列表
+  field:
+   query-condition: 查询条件
+   pid: 父级id
+# 供应商管理
+supplier-manage:
+ query-supplier-name-list:
+  summary: 获取供应商名称列表
+  field:
+   keywords: 关键字搜索
+   supplier-name: 供应商名称
+   supplier-id: 供应商id
+   item-list: 供应商名称列表
+supplier-linkman:
+ query-linkman-name-list:
+  summary: 获取供应商联系人名称列表
+  field:
+   keywords: 关键字搜索
+   name: 供应商联系人名称
+   linkman-id: 供应商联系人ID
+   item-list: 供应商联系人名称列表
+# 组织结构
+org-structure:
+ department-manage:
+  summary: 获取部门名称列表
+ position-manage:
+  summary: 获取岗位名称列表
+ role-manage:
+  summary: 获取角色名称列表
+ user-manage:
+  summary: 系统用户名称列表
+# 客户管理
+client-manage:
+ my-client:
+  summary: 获取客户名称列表
+  field:
+   name: 客户名称
+   customer-id: 客户ID
+ contact:
+  summary: 获取联系人名称列表
+  field:
+   id: 客户ID
+   linkman_id: 联系人ID
+   name: 联系人名称
+# 财务类型
+finance-type:
+ cost-expense:
+  summary: 获取费用开支类型名称列表
+  field:
+   id: 费用开支类型ID
+   name: 费用开支类型名称
+   parent-id: 父类型ID
+   sort: 排序
+   visible: 是否可见
+   intro: 介绍
+   children: 子类型列表
+ cost-income:
+  summary: 获取费用收入类型名称列表
+  field:
+   id: 费用收入类型ID
+   name: 费用收入类型名称
+   parent-id: 父类型ID
+   sort: 排序
+   visible: 是否可见
+   intro: 介绍
+   children: 子类型列表
+ bank-account:
+  summary: 获取银行账户列表
+  field:
+   bank_id: 银行ID
+   card: 银行卡号
+   name: 银行名称
+# 数据字典
+data-dict:
+ dict-type:
+  summary: 获取指定字典分类对应字典列表
+  field:
+   typeName: 字典类型名称
+   typeTag: 调用标识
+# 销售管理
+sale-manage:
+ sale-opportunity:
+  summary: 获取销售机会名称列表
+  field:
+   name: 销售机会名称
+   chance_id: 销售机会ID
+   customer_id: 客户ID
+ sale-contract:
+  summary: 获取销售合同名称列表
+  field:
+   title: 销售合同名称
+   contract_id: 销售合同ID
+   customer_id: 客户ID
+# 商品管理
+goods-manage:
+ goods-category:
+  summary: 获取商品分类名称列表
+  field:
+   id: 商品分类ID
+   name: 商品分类名称
+   children: 子分类列表

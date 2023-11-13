@@ -1,0 +1,131 @@
+﻿# 公共模块
+common-usage:
+ field:
+  rows: 数据列表
+# 供应商
+supplier:
+ getSupList:
+  summary: 获取供应商列表（分页+条件）
+  nameList: 获取供应商名称列表
+  name: 供应商名称关键字
+  telephone: 电话号码
+  mobile: 手机号
+  address: 联系地址
+  supplierName: 供应商名称
+  ecotype: 经济类型
+  indType: 行业类型
+  trade: 行业类型
+  linkman: 供应商联系人ID
+  fax: 传真
+  create_user_id: 创建用户ID
+  create_time: 创建时间
+  email: 邮箱
+  intro: 介绍
+  extend: 扩展字段
+  supplierId: 供应商ID
+  level: 客户等级
+  satisfy: 满意度(1-5)
+  credit: 信用度(1-5)
+  website: 网站
+  zipCode: 邮编
+  areaId: 所在地区
+  linkman_name: 供应商联系人名称
+ addSupplier:
+  summary: 添加供应商
+ modifySupplier:
+  summary: 修改供应商
+ removeSupplier:
+  summary: 删除供应商
+ query-sup-form-item:
+  field:
+   main-table: 关联主表
+   ext-table: 扩展表名
+   show-name: 字段表单名称
+   field-name: 字段名称
+   field-type: 字段类型
+   default: 默认值
+   is-must: 是否必填
+  summary: 获取供应商基础信息表单数据项
+# 供应商联系人:
+supplier-linkman:
+ export-sup-linkman:
+  field:
+   supplier-name: 供应商名称
+   address: 通信地址
+   keywords: 关键字(姓名/手机号/座机/QQ)
+  summary: 导出供应商联系人
+ basic-data:
+  field:
+   main-table: 关联主表
+   ext-table: 扩展表名
+   show-name: 字段表单名称
+   field-name: 字段名称
+   field-type: 字段类型
+   default: 默认值
+   is-must: 是否必填
+  summary: 获取供应商联系人基础信息表单数据项
+#发送邮件
+ send-message:
+  field:
+   supplier-list: 供应商联系人列表ID
+   message: 扩展短信内容
+   type: 短信类型
+  summary: 批量发短信
+
+ modify-link-man: 
+  summary: 修改供应商联系人
+  field:
+   name: 姓名
+   sex: 性别
+   tel: 手机
+   qq: QQ
+   position: 职位
+   mobile: 座机
+   email: 邮箱
+   address: 通信地址
+   linkman-id: 供应商联系人ID
+   supplier-id: 供应商ID
+   supplier-name: 供应商名称
+   ext-fields: 扩展字段
+ remove-sup-linkman:
+  summary: 删除供应商联系人
+ send-email:
+  summary: 批量发邮件
+  field: 
+   id : 联系人Id
+   name-list: 收件人
+   email-msg: 邮件内容
+   email-type: 邮件类型
+   mess-type: 消息类型
+   mess: 扩展信息
+   contrast_name: 合同名称
+   mobile: 手机号
+   email: 邮箱
+ query-linkman-name:
+  field:
+   linkman-id: 供应商联系人ID
+   name: 供应商联系人名称
+   keywords: 关键字搜索
+  summary: 获取供应商联系人名称列表
+ query-page:
+  summary: 获取供应商联系人列表（分页+条件）
+  field:
+   id: 供应商联系人ID
+   supplier-id: 供应商ID
+   name: 供应商联系人名称
+   gender: 性别
+   position: 职位
+   tel: 座机
+   mobile: 手机号
+   qq: QQ
+   email: 邮箱
+   zipcode: 邮政编码
+   supplier-name: 供应商名称
+   address: 通信地址
+   create-user-id: 创建用户ID
+   create-time: 创建时间
+   ext-fields: 扩展字段
+   intro: 介绍
+   keywords: 关键字(姓名/手机号/座机/QQ)
+ add-linkman:
+  summary: 添加供应商联系人

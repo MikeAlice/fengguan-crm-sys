@@ -1,0 +1,118 @@
+paybackmanage:
+ delete:
+  payplan: 删除回款计划
+ query:
+  amount: 获取金额信息
+ field:
+  listid: 要删除的合同的ID列表
+  amountid: 要获取金额信息的合同ID
+  totalamount: 总金额
+  zeroamount: 去零金额
+  refundedamount: 已经回款金额
+  invoicedamount : 已开发票金额
+collectionplan:
+ update-pay-plan:
+  summary: 修改回款计划
+ update-confirm-plan:
+  summary: 确认回款计划
+ field:
+  clientName: 客户名称
+  clientNameId: 客户名称编号
+  saleContract: 销售合同
+  saleContractId: 销售合同编号
+  totalAmount: 总金额
+  noZeroAmount: 去零金额
+  backAmount: 已回款金额
+  invoiceAmount: 已开发票金额
+  planBackDate: 计划回款日期
+  period: 期次
+  planBackAmount: 计划回款金额
+  havePayAmount: 已付金额
+  payAmount: 付款金额
+  payAccount: 付款账户
+collectionplans:
+ get-collectionplans:
+  get: 获取回款列表
+ add-collection:
+  add: 添加回款计划
+ field:
+  name: 客户名字
+  customer_id: 客户id
+  contract: 合同订单名称
+  backdate: 回款日期
+  backdate1: 回款日期在这之前
+  stages: 期次
+  money: 总金额
+  contract_id: 合同编号
+  contract_name: 合同名称
+  id: 计划编号
+  ifpay: 是否回款
+  createdate: 创建时间
+  createdate1: 创建时间在这之前
+  create_user_id: 创建人id(自动获取)
+collectionRecord:
+ get:
+  summary: 查询回款记录
+ post: 
+  summary: 新增回款记录
+ delete: 
+  summary: 删除回款记录
+ export:
+  summary: 导出回款记录
+ field:
+  listid: 要删除的合同的ID列表
+  amountid: 要获取金额信息的合同ID
+  totalamount: 总金额
+  zeroamount: 去零金额
+  refundedamount: 已经回款金额
+  invoicedamount : 已开发票金额
+  record_id: 回款记录编号
+  customer_name: 客户名称
+  contract_id: 合同订单
+  back_date: 回款日期
+  stages: 期次
+  bank_id: 回款账号
+  money: 金额
+  create_user_id: 创建人
+  create_time: 创建时间
+  start_time: 开始日期
+  end_time: 结束日期
+  id: 编号
+  idList: 删除id列表
+  del_record_id_List: 删除回款记录编号
+  downloadUrl: 文件下载地址
+
+
+BillingRecords: 
+ delete:
+  summary: 删除开票记录(支持批量删除)
+  idList: 删除id列表
+ field:
+  id: 开票编号
+ export:
+  summary: 导出开票记录
+  idlist: 导出id列表
+Invoice:
+ field:
+  record_id: 编号
+  contract_id: 合同id
+  contract_name: 合同名字
+  customer_id: 顾客id
+  customer_name: 顾客名字
+  money: 金额
+  pay_date: 开票日期
+  stages: 开票期次
+  invoice_no: 发票编号
+  name: 发票内容
+  bus_type: 开票类型
+  intro: 备注
+  create_time: 创建时间
+  create_user_id: 创建人id 
+ get:
+  summary: 分页查询开票
+ add:
+  summary: 新增开票   
+
+
+
+

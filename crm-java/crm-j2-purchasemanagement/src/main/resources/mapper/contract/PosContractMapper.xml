@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.purchasemanagement.modules.contract.mapper.PosContractMapper">
+
+    <select id="getContractMoneyStatistic" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractListWithPageConditionVO$ContractMoneyStatistic">
+        select sum(`money`) `totalMoney`,
+               sum(`zero_money`) `totalZeroMoney`,
+               sum(`pay_money`) `totalPayMoney`,
+               sum(`owe_money`) `totalOweMoney`
+        from pos_contract
+    </select>
+
+    <select id="getContractListWithPage" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractListWithPageConditionVO$ContractVO">
+        select pc.*,
+               ss.`name` `supplierName`,
+               sl.`name` `supplierLinkmanName`,
+               fsu.`name` `ourUserName`
+        from pos_contract pc
+        left join sup_supplier ss on pc.`supplier_id` = ss.`supplier_id`
+        left join sup_linkman sl on pc.`linkman_id` = sl.`linkman_id`
+        left join fly_sys_user fsu on pc.`our_user_id` = fsu.`id`
+        <where>
+            <if test="param.startDate != null and param.startDate != ''">
+                pc.`start_date` &gt;= #{param.startDate}
+            </if>
+            <if test="param.endDate != null and param.endDate != ''">
+                and pc.`end_date` &gt;= #{param.endDate}
+            </if>
+            <if test="param.name != null and param.name != ''">
+                and pc.`title` like concat('%', #{param.name}, '%')
+            </if>
+            <if test="param.supplierName != null and param.supplierName != ''">
+                and ss.`name` like concat('%', #{param.supplierName}, '%')
+            </if>
+            <if test="param.intro != null and param.intro != ''">
+                and pc.`intro` like concat('%', #{param.intro}, '%')
+            </if>
+        </where>
+    </select>
+
+    <select id="getContractBaseInfoById" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractDetailVO">
+        select pc.*,
+               ss.`name` `supplierName`,
+               sl.`name` `supplierLinkmanName`,
+               fsu.`name` `ourUserName`
+        from pos_contract pc
+        left join sup_supplier ss on pc.`supplier_id` = ss.`supplier_id`
+        left join sup_linkman sl on pc.`linkman_id` = sl.`linkman_id`
+        left join fly_sys_user fsu on pc.`our_user_id` = fsu.`id`
+        where pc.`contract_id` = #{contractId}
+    </select>
+
+    <select id="getContractDetailNumMoneyStatistic" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractDetailVO$TotalStatistic">
+        select sum(`num`) `purchaseTotalNum`,
+               sum(`goods_money`) `purchaseSubtotal`
+        from pos_contract_list
+        where `contract_id` = #{contractId}
+    </select>
+
+    <select id="getPayRecordTotalMoney" resultType="java.math.BigDecimal">
+        select sum(`money`) `payTotalMoney`
+        from fin_pay_record
+        where `contract_id` = #{contractId}
+    </select>
+
+    <select id="getInvoiceTotalMoney" resultType="java.math.BigDecimal">
+        select sum(`money`) `invoiceTotalMoney`
+        from fin_invoice_rece
+        where `contract_id` = #{contractId}
+    </select>
+
+    <select id="getPayRecordListByContractId" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractDetailVO$PayRecord">
+        select fpr.*,
+               fsu.`name` `createUserName`
+        from fin_pay_record fpr
+        left join fly_sys_user fsu on fpr.`create_user_id` = fsu.`id`
+        where fpr.`contract_id` = #{contractId}
+        order by fpr.`create_time` desc
+    </select>
+
+    <select id="getInvoiceRecordListByContractId" resultType="com.zeroone.star.project.vo.j2.purchasemanagement.GetContractDetailVO$InvoiceRecord">
+        select frr.*,
+               fsu.`name` `createUserName`
+        from fin_rece_record frr
+        left join fly_sys_user fsu on frr.`create_user_id` = fsu.`id`
+        where frr.`contract_id` = #{contractId}
+        order by frr.`create_time` desc
+    </select>
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.commodity.mapper.GoodsMapper">
+
+    <resultMap type="com.zeroone.star.project.dto.j4.commodity.validation.ContentDTO" id="contentMap">
+        <result column="name" property="content" />
+    </resultMap>
+    
+    <select id="getGoodsNames" resultType="java.lang.String">
+        select fgc.category_name from fly_goods fg
+        inner join fly_goods_category fgc on fg.category_id = fgc.category_id
+    </select>
+    
+    <select id="getGoodsDetailsById" resultType="String">
+        select content from fly_goods
+        <where>
+            goods_id = #{goodsId}
+        </where>
+    </select>
+</mapper>

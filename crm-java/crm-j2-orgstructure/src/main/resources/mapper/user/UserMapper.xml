@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.orgstructure.modules.user.mapper.UserMapper">
+    <select id="getUserExcelListByIds" resultType="com.zeroone.star.orgstructure.modules.user.excel.UserExcel">
+        select fsu.*, fsr.`name` `role`, fsd.`name` `dept`, fsp.`name` `position`
+        from fly_sys_user fsu
+        left join fly_sys_role fsr on fsu.`roleID` = fsr.`id`
+        left join fly_sys_dept fsd on fsu.`deptID` = fsd.`id`
+        left join fly_sys_position fsp on fsu.`positionID` = fsp.`id`
+        where fsu.`id` in
+            <foreach collection="userIdList" item="userId" open="(" close=")" separator=",">
+                #{userId}
+            </foreach>
+    </select>
+</mapper>

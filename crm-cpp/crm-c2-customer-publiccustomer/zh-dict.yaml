@@ -1,0 +1,8 @@
+﻿mycustormer:
+ recevicecustormer:
+  summary: 领取客户
+ info:
+  id: 客户ID（List）
+hrm:
+ staff:
+  id: 员工ID

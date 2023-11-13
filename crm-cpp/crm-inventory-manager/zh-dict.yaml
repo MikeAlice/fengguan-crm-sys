@@ -1,0 +1,201 @@
+outbounddetail:
+ controller:
+  query:
+   summary: 获取出库明细项列表
+  export:
+   summary: 导出出库明细
+ field:
+  id: id
+  SKUID: 商品编号
+  SKUname: 商品名称
+  number: 数量
+  commodityType: 商品类型
+  storehouse: 仓库名称
+  stockOut: 出库单
+  stockOutTime: 出库时间
+  note: 备注
+  suppliername: 供应商名称
+  contackAdd: 通信地址
+ example:
+  skuname: 商品名称或SKU名称
+  supplierName: 供应商名称
+  contactAdd: 通信地址
+storagedetails:
+ controller:
+  get:
+   summary: 获取入库明细项列表（分页+条件）
+  export:
+   summary: 导出入库明细
+ field: 
+  goods_id: 商品ID
+  sku_id: SKUID
+  goods_name: 商品名
+  sku_name: SKU名
+  number: 数量
+  category_name: 商品类型
+  store_name: 仓库名称
+  into_intro: 对应入库单
+  into_time: 入库时间
+  remarks: 备注
+  supplier_name: 供应商名称
+ example: 
+  goods_id: 14
+  sku_id: 28
+  goods_name: 交换机
+  sku_name: 交换机
+  number: 5
+  category_name: 通讯设备
+  store_name: 通讯仓库
+  into_intro: 采购通讯
+  into_time: 2023-10-05 21:13:14
+  remarks: 无
+  supplier_name: xxx公司
+confirmstorage:
+ controller:
+  get:
+   summary: 确认入库
+ field:
+  wrong_params: id为空或者id为0
+  success: 成功入库
+  fail: 已经入库了
+ example:
+  good_name: 牙膏
+  sku_name: 盒
+deletestorage:
+ controller:
+  delete:
+   summary: 删除入库单
+intostock:
+ field:
+  id: 入库单主键
+  contract_id: 采购合同编号
+  title: 订单主题
+  store_id: 仓库编号
+  into_user_id: 入库管理员
+  status: 状态
+  number: 入库数量
+  into_time: 入库时间
+  into_type: 入库类型
+  good_name: 商品名称
+  sku_name: sku名称
+  suppliers_name: 供应商名称
+  address: 通信地址
+  create_time: 创建时间
+instorage:
+ controller:
+  get:
+   query-instorage: 获取入库单列表（分页+条件）
+   query-instorage_details: 查询入库明细
+  post:
+   add-instorage: 添加入库单
+ field:
+  id: 单号
+  contract_id: 合同编号
+  title: 主题
+  store_id: 仓库编号
+  into_user_id: 入库人编号
+  into_user: 入库人
+  into_time: 入库时间
+  create_user_id: 创建人编号
+  create_user: 创建人
+  create_time: 创建时间
+  intro: 备注
+  status: 入库状态
+  number: 数量
+  money: 金额
+  into_type: 入库类型
+  good_name: 商品名称
+  sku_name: sku名称
+  suppliers_name: 供应商名称
+  address: 通信地址
+
+out_stock:
+ controller:
+  get:
+   summary: 获取出库单项列表（分页+条件）
+   summary1: 添加出库单
+   summary2: 获取出库单明细
+ field:
+  id: 查询单号
+  goods_id: 商品id
+  sku_id: SKU ID
+  goods_name: 商品名
+  sku_name: SKU名
+  number: 出库数量
+  category_name: 商品类型
+  store_name: 仓库名称
+  out_stock_order: 对应出库单
+  out_time: 出库时间
+  remarks: 备注
+  supplier_name: 供应商名称
+  create_user_id: 创建人
+  create_time: 创建时间
+  status: 出库单状态
+  out_type: 出库类型
+  out_stock_person: 出库人员
+  out_stock_id: 出库单号
+ example:
+  goods_id: 14
+  sku_id: 28
+  goods_name: 交换机
+  sku_name: 交换机
+  number: 5
+  category_name: 通讯设备
+  store_name: 通讯仓库
+  out_stock_order: 10857
+  out_time: 2023-10-05 21:13:14
+  remarks: 无
+  supplier_name: xxx公司
+  create_user_id: 857
+  create_time: 202401010000 #2024-01-01 00:00:00
+  status: 0 #未出库
+  out_type: 出库类型
+  out_stock_person: 出库人员
+
+out_bound:
+ controller:
+  put:
+   summary: 确认出库
+  delete:
+   summary: 删除出库单
+  field:
+   out_id: 出库单单号
+
+inventorylist:
+ controller:
+  get:
+   summary: 获取库存列表（分页+条件）
+  export:
+   summary: 导出库存列表信息
+ field: 
+  goods_id: 商品ID
+  sku_id: SKUID
+  goods_name: 商品名
+  sku_name: SKU名
+  number: 库存数量
+  category_name: 商品类型
+  store_name: 仓库名称
+  cost_price: 成本价格
+  cost_amount: 成本金额
+  anticipated_profit: 预计利润
+  Original_code: 原厂编码
+  supplier_name: 供应商名称
+  mailing_address: 通信地址
+ example: 
+  goods_id: 14
+  sku_id: 28
+  goods_name: 电动牙刷
+  sku_name: 电动牙刷
+  number: 6
+  category_name: 生活用品
+  store_name: 日用品库
+  cost_price: 55
+  cost_amount: 66
+  anticipated_profit: 35
+  Original_code: 5-4-5555
+  supplier_name: xiaomi
+  mailing_address: 北京xxx
+
+ 
+
+ 

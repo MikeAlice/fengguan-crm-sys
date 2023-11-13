@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.commodity.mapper.GoodsTypeMapper">
+
+    <resultMap id="SimpleTypesRes" type="com.zeroone.star.commodity.entity.FlyGoodsAttr">
+        <id column="attr_id" property="attrId"/>
+        <result column="attr_name" property="attrName"/>
+        <result column="visible" property="visible"/>
+        <result column="sort" property="sort"/>
+<!--        <collection property="attrValueName" ofType="string">-->
+<!--            <result column="attr_value_name"/>-->
+<!--        </collection>-->
+        <!--        <association property="attrValueName" javaType="com.zeroone.star.commodity.entity.FlyGoodsAttrValue"/>-->
+    </resultMap>
+    <select id="findSimpleType" resultType="com.zeroone.star.project.dto.j4.commodity.SimpleTypeInfoDTO" parameterType="int">
+--         SELECT a.attr_id,a.attr_name,a.sort,a.visible,v.attr_value_name from fly_goods_attr as a,fly_goods_attr_value as v
+--         where v.attr_id=a.attr_id;
+    SELECT a.attr_id,a.attr_name,a.sort,a.visible from fly_goods_attr as a where attr_id=#{id}
+    </select>
+    <select id="findAllIds" resultType="java.lang.Integer">
+        select attr_id from fly_goods_attr;
+    </select>
+    <select id="findAllTags" resultType="java.lang.String" parameterType="int">
+        select attr_value_name from fly_goods_attr_value where attr_id =#{id};
+    </select>
+
+
+
+    <select id="findPages" resultType="com.zeroone.star.commodity.entity.FlyGoodsAttr" resultMap="SimpleTypesRes">
+        SELECT a.attr_id,a.attr_name,a.sort,a.visible from fly_goods_attr as a
+    </select>
+</mapper>

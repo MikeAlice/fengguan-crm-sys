@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.login.mapper.FlySysMenuMapper">
+    <resultMap id="BaseResultMap" type="com.zeroone.star.login.entity.FlySysMenu">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="nameEn" column="name_en" jdbcType="VARCHAR"/>
+        <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="parentid" column="parentID" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="visible" column="visible" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="selectByRoleName" resultMap="BaseResultMap">
+      SELECT id,`name`,name_en,url,parentid,sort,visible,icon FROM fly_sys_menu WHERE url IS NOT NULL AND id IN (SELECT menu_id FROM fly_sys_role_menu WHERE role_id=(SELECT id FROM fly_sys_role WHERE name=#{roleName})) ORDER BY sort
+    </select>
+</mapper>

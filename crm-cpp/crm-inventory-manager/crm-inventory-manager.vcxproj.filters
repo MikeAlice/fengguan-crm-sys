@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\OtherComponent.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\Router.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\DoInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\GlobalInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\outbounddetail\OutboundDetailQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\outbounddetail\OutboundDetailController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\outbounddetail\OutboundDetailsPageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\outbounddetail\OutboundDetailsDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\storagedetails\StorageDetailsController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\storagedetails\StorageDetailsDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\storagedetails\StorageDetailsQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\storagedetails\StorageDetailsPageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\in_storage\confirmstorage\ConfirmStorageController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\in_storage\confirmstorage\TestController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\in_storage\deletestorage\DeleteStorageController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\instorage\InStorageDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\intostockVO\InStorageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\instorage\InStorageQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\outbounddetail\OutboundDetailController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\outbounddetail\OutboundDetailsDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\outbounddetail\OutboundDetailQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\outbounddetail\OutboundDetailsPageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\in_storage\InStorageController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\in_storage\InStorageDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\in_storage\InStorageQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\in_storage\InStorageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\out_stock\Out_StockQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\out_stock\Out_StockPageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\inventorylist\InventorylistController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\inventorylist\InventorylistDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\inventorylist\InventoryListQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\inventorylist\InventoryListPageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\outbounddetail\OutboundDetailMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\outbounddetail\OutboundDetailDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\outbounddetail\OutboundDetailService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\storagedetails\StorageDetailsService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uselib\excel\useExcel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uselib\fastdfs\useFastDFS.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\in_storage\InStorageDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\in_storage\InStorageService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\storagedetails\StorageDetailsDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\storagedetails\StorageDetailsMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\storagedetails\StorageDetailsDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\in_storage\InStorageDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\in_storage\InStorageMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\outbounddetail\OutboundDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\out_bound\Out_boundController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\out_bound\Out_boundService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\out_bound\Out_boundDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\out_bound\Out_boundMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\out_bound\Out_boundDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\out_bound\Out_boundDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\out_bound\Out_boundQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\out_stock\Out_stockController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\out_stock\Out_stockDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\out_stock\Out_stockMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\out_stock\Out_stockDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\out_stock\Out_stockService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\out_stock\Out_stockDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uselib\jwt\TestToken.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\inventorylist\InventoryListService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\inventorylist\InventoryListDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\inventorylist\InventoryListMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\inventorylist\InventoryListDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\Router.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\SystemInterceptor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\outbounddetail\OutboundDetailController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\storagedetails\StorageDetailsController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\in_storage\confirmstorage\ConfirmStorageController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\in_storage\deletestorage\DeleteStorageController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\outbounddetail\OutboundDetailController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\in_storage\InStorageController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\inventorylist\InventorylistController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\outbounddetail\OutboundDetailService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\storagedetails\StorageDetailsService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="uselib\excel\useExcel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="uselib\fastdfs\useFastDFS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\in_storage\InStorageService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\storagedetails\StorageDetailsDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\in_storage\InStorageDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\outbounddetail\OutboundDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\out_bound\Out_boundController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\out_bound\Out_boundService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\out_bound\Out_boundDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\out_stock\Out_stockController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\out_stock\Out_stockDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\out_stock\Out_stockService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="uselib\jwt\TestToken.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\inventorylist\InventoryListService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\inventorylist\InventoryListDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,94 @@
+﻿awaiting_:
+ filed:
+  awaitpayments_id: 合同id
+  awaitpayments_name: 合同名称
+  awaitpayments_all_money: 合同总金额
+  awaitpayments_rmoney: 合同已回款金额
+  awaitpayments_amoney: 合同欠款
+  awaitpayments_time: 待还款合同创建时间
+  name: 合同名称
+  cust_type: 类型
+  cust_name: 名称
+  cust_time: 待跟进时间
+ query:
+  summary: 查询跟踪记录
+send:
+ ms: 
+  summary: 发送预约提醒短信(支持批量)
+ em:
+  summary: 发送预约提醒邮件(支持批量)
+ fieid:
+  phone: 电话   
+  time: 时间
+  email: 邮箱
+  id: 客户ID
+ email: 邮箱
+
+count-num:
+ query: 
+  summary: 进行数量统计
+ field:
+  time-slot: 时间段
+  business-opportunity: 新增商机数
+  contract: 新增合同数
+  follow-up-records: 新增跟进记录数
+  contact-people: 新增联系人数
+  contract-amount: 新增合同金额
+  collection-amount: 新增回款金额
+sales-chart:
+ query:
+  summary: 获取销售榜
+ field:
+   name: 姓名
+   amount: 销售金额
+   total: 合同总数
+time:
+ this-week: 本周
+ last-week: 上周
+ this-month: 本月
+ last-month: 上月
+ this-quarter: 本季度
+ last-quarter: 上季度
+ this-year: 今年
+ last-year: 去年
+ total: 合同总数
+trace:
+ add-trace:
+  summary: 增加跟踪记录
+ modify-trace:
+  summary: 修改跟踪记录
+ get-trace: 
+  summary: 获取跟踪记录
+ delete:
+  summary: 单独删除跟踪记录
+  list: 批量删除跟踪记录
+ download:
+  summary: 导出跟踪记录
+ field:
+  list_id: 跟踪记录id列表
+  trace_id: 跟踪记录id
+  AC: 关联客户
+  CC: 客户联系人
+  FM: 跟进方式
+  FT: 跟进时间
+  CContent: 沟通内容
+  CS: 当前阶段
+  SO: 销售机会
+  NT: 下次沟通
+tracefile:
+ upload: 
+  summary: 单文件上传
+ upload-more:
+  summary: 多文件上传
+ download:
+  summary: 下载跟踪记录文件
+ html:
+  summary: HTML静态页面访问
+ editor-upload-image:
+  summary: editor上传图片示例接口
+ field:
+  filename: 文件名
+  href: 图片链接地址
+
+
+

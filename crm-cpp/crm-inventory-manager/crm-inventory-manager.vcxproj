@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{88cd2605-a615-47ca-bdcc-16c1d860a758}</ProjectGuid>
+    <RootNamespace>crminventorymanager</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <AdditionalIncludeDirectories>.\;..\lib-common\include;..\lib-mysql\include;..\lib-oatpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib\debug;..\lib-common\lib\debug;..\lib-mysql\lib\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;yaml-cppd.lib;xlntd.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-common\include;..\lib-mysql\include;..\lib-oatpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib\openssl;..\lib-oatpp\lib;..\lib-common\lib;..\lib-mysql\lib\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;yaml-cpp.lib;xlnt.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-common\include;..\lib-mysql\include;..\lib-oatpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64\debug;..\lib-common\lib64\debug;..\lib-mysql\lib64\vs14\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;yaml-cppd.lib;xlntd.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\;..\lib-common\include;..\lib-mysql\include;..\lib-oatpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib-oatpp\lib64\openssl;..\lib-oatpp\lib64;..\lib-common\lib64;..\lib-mysql\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oatpp.lib;oatpp-swagger.lib;ws2_32.lib;mysqlcppconn.lib;libcrypto.lib;libssl.lib;yaml-cpp.lib;xlnt.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)lib-dy/lib64/release" "$(OutDir)" /a /F /I /Y /C</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h" />
+    <ClInclude Include="controller\inventorylist\InventorylistController.h" />
+    <ClInclude Include="controller\in_storage\confirmstorage\ConfirmStorageController.h" />
+    <ClInclude Include="controller\in_storage\confirmstorage\TestController.h" />
+    <ClInclude Include="controller\in_storage\deletestorage\DeleteStorageController.h" />
+    <ClInclude Include="controller\in_storage\InStorageController.h" />
+    <ClInclude Include="controller\OtherComponent.hpp" />
+    <ClInclude Include="controller\outbounddetail\OutboundDetailController.h" />
+    <ClInclude Include="controller\out_bound\Out_boundController.h" />
+    <ClInclude Include="controller\out_stock\Out_stockController.h" />
+    <ClInclude Include="controller\Router.h" />
+    <ClInclude Include="controller\storagedetails\StorageDetailsController.h" />
+    <ClInclude Include="dao\inventorylist\InventoryListDAO.h" />
+    <ClInclude Include="dao\inventorylist\InventoryListMapper.h" />
+    <ClInclude Include="dao\in_storage\InStorageDAO.h" />
+    <ClInclude Include="dao\in_storage\InStorageMapper.h" />
+    <ClInclude Include="dao\outbounddetail\OutboundDAO.h" />
+    <ClInclude Include="dao\outbounddetail\OutboundDetailMapper.h" />
+    <ClInclude Include="dao\out_bound\Out_boundDAO.h" />
+    <ClInclude Include="dao\out_bound\Out_boundMapper.h" />
+    <ClInclude Include="dao\out_stock\Out_stockDAO.h" />
+    <ClInclude Include="dao\out_stock\Out_stockMapper.h" />
+    <ClInclude Include="dao\storagedetails\StorageDetailsDAO.h" />
+    <ClInclude Include="dao\storagedetails\StorageDetailsMapper.h" />
+    <ClInclude Include="domain\do\DoInclude.h" />
+    <ClInclude Include="domain\do\inventorylist\InventoryListDO.h" />
+    <ClInclude Include="domain\do\in_storage\InStorageDO.h" />
+    <ClInclude Include="domain\do\outbounddetail\OutboundDetailDO.h" />
+    <ClInclude Include="domain\do\out_bound\Out_boundDO.h" />
+    <ClInclude Include="domain\do\out_stock\Out_stockDO.h" />
+    <ClInclude Include="domain\do\storagedetails\StorageDetailsDO.h" />
+    <ClInclude Include="domain\dto\instorage\InStorageDTO.h" />
+    <ClInclude Include="domain\dto\inventorylist\InventorylistDTO.h" />
+    <ClInclude Include="domain\dto\in_storage\InStorageDTO.h" />
+    <ClInclude Include="domain\dto\outbounddetail\OutboundDetailsDTO.h" />
+    <ClInclude Include="domain\dto\out_bound\Out_boundDTO.h" />
+    <ClInclude Include="domain\dto\out_stock\Out_stockDTO.h" />
+    <ClInclude Include="domain\dto\storagedetails\StorageDetailsDTO.h" />
+    <ClInclude Include="domain\GlobalInclude.h" />
+    <ClInclude Include="domain\query\instorage\InStorageQuery.h" />
+    <ClInclude Include="domain\query\inventorylist\InventoryListQuery.h" />
+    <ClInclude Include="domain\query\in_storage\InStorageQuery.h" />
+    <ClInclude Include="domain\query\outbounddetail\OutboundDetailQuery.h" />
+    <ClInclude Include="domain\query\out_bound\Out_boundQuery.h" />
+    <ClInclude Include="domain\query\out_stock\Out_StockQuery.h" />
+    <ClInclude Include="domain\query\storagedetails\StorageDetailsQuery.h" />
+    <ClInclude Include="domain\vo\intostockVO\InStorageJsonVO.h" />
+    <ClInclude Include="domain\vo\inventorylist\InventoryListPageJsonVO.h" />
+    <ClInclude Include="domain\vo\in_storage\InStorageJsonVO.h" />
+    <ClInclude Include="domain\vo\outbounddetail\OutboundDetailsPageJsonVO.h" />
+    <ClInclude Include="domain\vo\out_stock\Out_StockPageJsonVO.h" />
+    <ClInclude Include="domain\vo\storagedetails\StorageDetailsPageJsonVO.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="ServerInfo.h" />
+    <ClInclude Include="service\inventorylist\InventoryListService.h" />
+    <ClInclude Include="service\in_storage\InStorageService.h" />
+    <ClInclude Include="service\outbounddetail\OutboundDetailService.h" />
+    <ClInclude Include="service\out_bound\Out_boundService.h" />
+    <ClInclude Include="service\out_stock\Out_stockService.h" />
+    <ClInclude Include="service\storagedetails\StorageDetailsService.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="uselib\excel\useExcel.h" />
+    <ClInclude Include="uselib\fastdfs\useFastDFS.h" />
+    <ClInclude Include="uselib\jwt\TestToken.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\inventorylist\InventorylistController.cpp" />
+    <ClCompile Include="controller\in_storage\confirmstorage\ConfirmStorageController.cpp" />
+    <ClCompile Include="controller\in_storage\deletestorage\DeleteStorageController.cpp" />
+    <ClCompile Include="controller\in_storage\InStorageController.cpp" />
+    <ClCompile Include="controller\outbounddetail\OutboundDetailController.cpp" />
+    <ClCompile Include="controller\out_bound\Out_boundController.cpp" />
+    <ClCompile Include="controller\out_stock\Out_stockController.cpp" />
+    <ClCompile Include="controller\Router.cpp" />
+    <ClCompile Include="controller\storagedetails\StorageDetailsController.cpp" />
+    <ClCompile Include="controller\SystemInterceptor.cpp" />
+    <ClCompile Include="dao\inventorylist\InventoryListDAO.cpp" />
+    <ClCompile Include="dao\in_storage\InStorageDAO.cpp" />
+    <ClCompile Include="dao\outbounddetail\OutboundDAO.cpp" />
+    <ClCompile Include="dao\out_bound\Out_boundDAO.cpp" />
+    <ClCompile Include="dao\out_stock\Out_stockDAO.cpp" />
+    <ClCompile Include="dao\storagedetails\StorageDetailsDAO.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="service\inventorylist\InventoryListService.cpp" />
+    <ClCompile Include="service\in_storage\InStorageService.cpp" />
+    <ClCompile Include="service\outbounddetail\OutboundDetailService.cpp" />
+    <ClCompile Include="service\out_bound\Out_boundService.cpp" />
+    <ClCompile Include="service\out_stock\Out_stockService.cpp" />
+    <ClCompile Include="service\storagedetails\StorageDetailsService.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="uselib\excel\useExcel.cpp" />
+    <ClCompile Include="uselib\fastdfs\useFastDFS.cpp" />
+    <ClCompile Include="uselib\jwt\TestToken.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib-common\lib-common.vcxproj">
+      <Project>{213f58ad-9943-4155-8a45-1b2dab0bb8f9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-mysql\lib-mysql.vcxproj">
+      <Project>{8293b741-b019-444f-80bc-70321a47868e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib-oatpp\lib-oatpp.vcxproj">
+      <Project>{3fc26f19-d665-40bd-92f1-fc4be22a38ba}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

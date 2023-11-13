@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>示例模块 API接口服务</title>
+      <link rel="stylesheet" href="https://unpkg.com/ant-design-vue@1.4.10/dist/antd.min.css" />
+      <style>
+      
+.content-line {
+  height: 25px;
+  line-height: 25px;
+}
+.content-line-count {
+  height: 35px;
+  line-height: 35px;
+}
+.title {
+  margin-top: 25px;
+}
+.knife4j-description {
+ /*  width: 90%;
+  margin: 15px auto; */
+  margin-top: 5px;
+}
+.divider {
+  margin: 4px 0;
+}
+.divider-count {
+  margin: 8px 0;
+}
+.knife4j-document {
+  margin-top: 30px;
+}
+.api-tab {
+  margin-top: 15px;
+
+  .ant-tag {
+    height: 32px;
+    line-height: 32px;
+  }
+}
+.knife4j-menu-api-deprecated {
+  text-decoration: line-through;
+}
+
+.knife4j-api-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #616368;
+  height: 35px;
+  line-height: 35px;
+}
+.knife4j-api-row {
+  height: 45px;
+  line-height: 45px;
+}
+
+.knife4j-api-summary {
+  border-color: #49cc90;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+}
+.knife4j-api-summary-method {
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 80px;
+  padding: 6px 15px;
+  text-align: center;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  font-family: Titillium Web, sans-serif;
+  color: #fff;
+}
+.knife4j-api-summary-path {
+  font-size: 14px;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 3 auto;
+  flex: 0 3 auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  word-break: break-all;
+  padding: 0 32px;
+}
+
+.knife4j-api-post {
+  border-color: #49cc90;
+  background: rgba(73, 204, 144, 0.1);
+}
+.knife4j-api-post .knife4j-api-summary-method {
+  background: #49cc90;
+}
+
+.knife4j-api-get {
+  border-color: #61affe;
+  background: rgba(97, 175, 254, 0.1);
+}
+.knife4j-api-get .knife4j-api-summary-method {
+  background: #61affe;
+}
+.knife4j-api-head {
+  border-color: #9012fe;
+  background: rgba(144, 18, 254, 0.1);
+}
+.knife4j-api-head .knife4j-api-summary-method {
+  background: #9012fe;
+}
+.knife4j-api-put {
+  border-color: #fca130;
+  background: rgba(252, 161, 48, 0.1);
+}
+.knife4j-api-put .knife4j-api-summary-method {
+  background: #fca130;
+}
+.knife4j-api-delete {
+  border-color: #f93e3e;
+  background: rgba(249, 62, 62, 0.1);
+}
+.knife4j-api-delete .knife4j-api-summary-method {
+  background: #f93e3e;
+}
+.knife4j-api-options {
+  border-color: #0d5aa7;
+  background: rgba(13, 90, 167, 0.1);
+}
+.knife4j-api-options .knife4j-api-summary-method {
+  background: #0d5aa7;
+}
+.knife4j-api-patch {
+  border-color: #50e3c2;
+  background: rgba(80, 227, 194, 0.1);
+}
+.knife4j-api-patch .knife4j-api-summary-method {
+  background: #50e3c2;
+}
+#knife4jDoc ul{
+  padding-left: 10px;
+  list-style: none;
+  counter-reset: ordered;
+}
+
+#knife4jDoc ul li:before {
+  counter-increment: ordered;
+  content: counters(ordered,".")" ";
+  color:#1890ff;
+}
+.api-basic {
+  padding: 11px;
+}
+.api-basic-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.api-basic-body {
+  font-size: 14px;
+  font-family: -webkit-body;
+}
+.knife4j-api-editor-show {
+  margin: 15px 0;
+  font: 100 12px/18px monaco, andale mono, courier new;
+  padding: 10px 12px;
+  border: #ccc 1px solid;
+  border-left-width: 4px;
+  background-color: #fefefe;
+  box-shadow: 0 0 4px #eee;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #444;
+}
+.knife4j-api-editor-show .string { color: green; }        /*字符串的样式*/
+.knife4j-api-editor-show .number { color: darkorange; }    /*数字的样式*/
+.knife4j-api-editor-show .boolean { color: blue; }        /*布尔型数据的样式*/
+.knife4j-api-editor-show .null { color: magenta; }        /*null值的样式*/
+.knife4j-api-editor-show .key { color: red; }            /*key值的样式*/
+.api-description {
+  border-left: 4px solid #ddd;
+  line-height: 30px;
+}
+.api-body-desc {
+  padding: 10px;
+  min-height: 35px;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+}
+.ant-card-body {
+  padding: 5px;
+}
+.api-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 30px;
+  line-height: 30px;
+  border-left: 4px solid #00ab6d;
+  text-indent: 8px;
+}
+.content-line {
+  height: 25px;
+  line-height: 25px;
+}
+.content-line-count {
+  height: 35px;
+  line-height: 35px;
+}
+.divider {
+  margin: 4px 0;
+}
+.knife4j-doc-m{
+  position: fixed;
+  height: 500px;
+  width: 400px;
+  border: 1px solid #b7b4b4;
+  overflow-y: auto;
+  right: 12px;
+  top: 40px;
+  z-index: 9999;
+  background: #fcfafa;
+}
+
+      </style>
+  </head>
+  <body>
+      <div id="knife4jDocument" class="resume_preview_page" style="margin:10px auto;width:88%">
+      <div class="htmledit_views" >
+        <a-row>
+          <!--基础信息-->
+          <a-row>
+            <a-col :span="24">
+              <div class="title">
+                <h2>{{instance.title}}</h2>
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>简介</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.description" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>作者</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.contact" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>版本</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.version" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>host</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.host" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>basePath</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.basePath" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>服务Url</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.termsOfService" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>分组名称</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.name" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>分组url</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.url" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>分组location</h3>
+                  </a-col>
+                  <a-col :span="19"><span v-html="instance.location" /></a-col>
+                </a-row>
+                <a-divider class="divider" />
+              </div>
+              <div class="knife4j-description">
+                <a-row class="content-line">
+                  <a-col :span="5">
+                    <h3>接口统计信息</h3>
+                  </a-col>
+                  <a-col :span="19">
+                    <a-row class="content-line-count" v-for="param in instance.pathArrs" :key="param.method">
+                      <a-col :span="3">
+                        {{param.method}}
+                      </a-col>
+                      <a-col :span="2">
+                        <a-tag color="#108ee9">{{param.count}}</a-tag>
+                      </a-col>
+                      <a-divider class="divider-count" />
+                    </a-row>
+                  </a-col>
+                </a-row>
+              </div>
+            </a-col>
+          </a-row>
+    
+          <!--目录-->
+          <a-row id="knife4j-doc-m" class="knife4j-doc-m">
+            <a-row style="float: right;width: 57px;z-index: 10000;overflow: hidden;">
+              <a-button type="link" id="btnHide">隐藏</a-button>
+            </a-row>
+            <a-row v-if="hideShow" id="knife4jDoc">
+              <ul>
+                <li><a href="#knife4jDocument">主页</a></li>
+                <li v-for="tag in tags" :key="tag.name">
+                  <a :href="'#'+tag.name">{{tag.name}}</a>
+                  <ul>
+                    <li v-for="c in tag.childrens" :key="c.id"><a :href="'#'+c.operationId">{{c.summary}}</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </a-row>
+          </a-row>
+          <!--分组API信息-->
+          <!--遍历tags-->
+          <a-row v-for="tag in tags" :key="tag.name">
+            <h1 :id="tag.name">{{tag.name}}</h1>
+            <div class="knife4j-document" v-for="api in tag.childrens">
+              <!--接口基本信息-->
+              <a-row>
+                <a-row :id="api.operationId" class="knife4j-api-title">
+                  <span v-if="api.deprecated" class="knife4j-menu-api-deprecated">
+                    {{ api.summary }}
+                  </span>
+                  <span v-else>
+                    {{ api.summary }}
+                  </span>
+                </a-row>
+                <a-row :class="'knife4j-api-' + api.methodType.toLowerCase()">
+                  <div class="knife4j-api-summary">
+                    <span class="knife4j-api-summary-method">{{ api.methodType }}</span>
+                    <span class="knife4j-api-summary-path">{{ api.showUrl }}</span>
+                  </div>
+                </a-row>
+                <a-row class="knife4j-api-row">
+                  <a-col :span="12">
+                    <a-row>
+                      <a-col class="api-basic-title" :span="6">请求数据类型</a-col>
+                      {{ api.consumes }}
+                    </a-row>
+                  </a-col>
+                  <a-col :span="12">
+                    <a-row>
+                      <a-col class="api-basic-title" :span="6">响应数据类型</a-col>
+                      {{ api.produces }}
+                    </a-row>
+                  </a-col>
+                </a-row>
+              </a-row>
+              <div v-if="api.author">
+                <div class="api-title">
+                  开发者
+                </div>
+                <div v-if="api.author" v-html="api.author" class="api-body-desc"></div>
+              </div>
+              <!--接口描述-->
+              <div v-if="api.description">
+                <div class="api-title">
+                  接口描述
+                </div>
+                <div
+                  v-if="api.description"
+                  v-html="api.description"
+                  class="api-body-desc"
+                ></div>
+              </div>
+              <!--请求示例-->
+              <div v-if="api.requestValue">
+                <div class="api-title">
+                  请求示例
+                </div>
+                <pre
+                  class="knife4j-api-editor-show"
+                  v-html="formaterJson(api.requestValue)"
+                ></pre>
+              </div>
+              <div class="api-title">
+              请求参数
+              </div>
+              <a-table default-expand-all-rows :columns="columns" :data-source="api.reqParameters"
+                :row-key="genUnionTableKey"
+                size="small"
+                :pagination="page" >
+                  <template slot="requireTemplate" slot-scope="text">
+                    <span v-if="text" style="color:red">{{ text.toLocaleString() }}</span>
+                    <span v-else>{{ text.toLocaleString() }}</span>
+                  </template>
+
+                  <template slot="typeTemplate" slot-scope="text">
+                    <span :class="'knife4j-request-' + text">{{ text }}</span>
+                  </template>
+
+                  <template slot="datatypeTemplate" slot-scope="text, record">
+                    <data-type :text="text" :record="record"></data-type>
+                  </template>
+              </a-table>
+              <!--响应状态-->
+              <div class="api-title">
+                响应状态
+              </div>
+              <a-table
+                :columns="responseStatuscolumns"
+                :data-source="api.responseCodes"
+                row-key="code"
+                size="small"
+                :pagination="page"
+              >
+                <template slot="descriptionTemplate" slot-scope="text">
+                  <div v-html="text"></div>
+                </template>
+              </a-table>
+              <!--响应参数-->
+              <!--响应参数需要判断是否存在多个code-schema的情况-->
+              <div v-if="api.multipartResponseSchema">
+                <!--多个响应编码code的情况在离线文档中需要单独遍历分开-->
+                <a-tabs v-for="resp in api.multipCodeDatas" :key="resp.code">
+                  <a-tab-pane :tab="resp.code">
+                    <!--判断响应头-->
+                    <div v-if="resp.responseHeaderParameters">
+                      <div class="api-title">
+                        响应Header
+                      </div>
+                      <a-table
+                        :columns="responseHeaderColumns"
+                        :data-source="resp.responseHeaderParameters"
+                        row-key="id"
+                        size="small"
+                        :pagination="page"
+                      >
+                      </a-table>
+                    </div>
+                    <!--响应参数-->
+                    <div class="api-title">
+                      响应参数
+                    </div>
+                    <a-table
+                      :columns="responseParametersColumns"
+                      :data-source="resp.data"
+                      row-key="id"
+                      size="small"
+                      :pagination="page"
+                    >
+                    </a-table>
+                    <div class="api-title">
+                      响应示例
+                    </div>
+                    <div class="api-editor-show" v-if="resp.responseBasicType">
+                      {{ resp.responseText }}
+                    </div>
+                    <pre
+                      class="knife4j-api-editor-show"
+                      v-else
+                      v-html="formaterJson(resp.responseValue)"
+                    ></pre>
+                    <!-- <editor-show :value="resp.responseBasicType ? resp.responseText : resp.responseValue"></editor-show> -->
+                    <!-- <editor :value="resp.responseBasicType ? resp.responseText : resp.responseValue" @init="multiResponseSampleEditorInit" lang="json" theme="eclipse" width="100%" :height="editorMultiHeight"></editor> -->
+                  </a-tab-pane>
+                </a-tabs>
+              </div>
+              <div v-else>
+                <!--判断响应头-->
+                <div v-if="api.responseHeaderParameters">
+                  <div class="api-title">
+                    响应Header
+                  </div>
+                  <a-table
+                    :columns="responseHeaderColumns"
+                    :data-source="api.responseHeaderParameters"
+                    row-key="id"
+                    size="small"
+                    :pagination="page"
+                  >
+                  </a-table>
+                </div>
+                <!--响应参数-->
+                <div class="api-title">
+                  响应参数
+                </div>
+                <a-table
+                  :columns="responseParametersColumns"
+                  :data-source="api.multipData.data"
+                  row-key="id"
+                  size="small"
+                  :pagination="page"
+                >
+                </a-table>
+                <div class="api-title">
+                  响应示例
+                </div>
+                <div class="api-editor-show" v-if="api.multipData.responseBasicType">
+                  {{ api.multipData.responseText }}
+                </div>
+                <pre
+                  class="knife4j-api-editor-show"
+                  v-else
+                  v-html="formaterJson(api.multipData.responseValue)"
+                ></pre>
+              </div>
+              
+
+            <!--接口遍历结束-->
+            </div>
+          </a-row>
+      </a-row>
+
+      </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.10/dist/antd.min.js"></script>
+      <script type="text/javascript">
+      function getData(){
+        var datas={"instance":{"title":"示例模块 API接口服务","description":"示例模块 API接口服务","contact":"零壹星球","version":"1.0.0","host":"localhost:8082","basePath":"/","termsOfService":"","name":"area","url":"/v2/api-docs?group=area","location":"/v2/api-docs?group=area","pathArrs":[{"method":"DELETE","count":1},{"method":"POST","count":2},{"method":"GET","count":2}]},"hideShow":true,"tags":[{"name":"基础数据-地区管理","description":null,"order":2147483647,"author":null,"childrens":[{"id":"ccf6a99cfaf569c259589b0b7c239d80","operationId":"deleteAreaUsingDELETE","deprecated":false,"summary":"删除地区","methodType":"DELETE","showUrl":"/j3-area/deleteArea","consumes":["application/x-www-form-urlencoded"],"produces":["*/*"],"author":null,"description":"","requestValue":null,"reqParameters":[{"name":"id","children":null,"description":"地区id","in":"query","require":true,"type":"integer(int32)","schemaValue":null}],"responseCodes":[{"code":"200","description":"OK","schema":"JsonVO«boolean»"},{"code":"204","description":"No Content","schema":null},{"code":"401","description":"Unauthorized","schema":null},{"code":"403","description":"Forbidden","schema":null}],"multipartResponseSchema":false,"multipCodeDatas":[{"code":"200","responseHeaderParameters":null,"data":[{"name":"code","children":null,"description":"状态码","id":"param5","type":"integer(int32)","schemaValue":"integer(int32)"},{"name":"data","children":null,"description":"数据对象","id":"param6","type":"boolean","schemaValue":null},{"name":"message","children":null,"description":"提示消息","id":"param7","type":"string","schemaValue":null}],"responseBasicType":false,"responseText":null,"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": true,\n\t\"message\": \"提示消息内容\"\n}"}],"responseHeaderParameters":null,"multipData":{"oas2":true,"code":"200","description":"OK","schema":"JsonVO«boolean»","schemaTitle":null,"refTreetableparameters":[],"responseCodes":[],"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": true,\n\t\"message\": \"提示消息内容\"\n}","responseJson":{"code":10000,"data":true,"message":"提示消息内容"},"responseText":null,"responseBasicType":false,"responseHeaderParameters":null,"responseParameters":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param5","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"boolean","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param6","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param7","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}],"responseParameterRefName":"JsonVO«boolean»","responseRefParameters":[],"responseTreetableRefParameters":[],"responseDescriptions":{"code":"状态码","data":"数据对象","message":"提示消息"},"data":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param5","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"boolean","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param6","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param7","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]}},{"id":"df828d95e72cc716cf0aa4005277e29d","operationId":"insertAreaUsingPOST","deprecated":false,"summary":"新增地区","methodType":"POST","showUrl":"/j3-area/insertArea","consumes":["application/json"],"produces":["*/*"],"author":null,"description":"","requestValue":null,"reqParameters":[{"name":"intro","children":null,"description":"介绍","in":"query","require":true,"type":"string","schemaValue":null},{"name":"name","children":null,"description":"地区名","in":"query","require":true,"type":"string","schemaValue":null},{"name":"parentId","children":null,"description":"父级地区id","in":"query","require":true,"type":"integer(int32)","schemaValue":null},{"name":"sort","children":null,"description":"排序号","in":"query","require":true,"type":"integer(int32)","schemaValue":null},{"name":"visible","children":null,"description":"是否使用","in":"query","require":true,"type":"integer(int32)","schemaValue":null}],"responseCodes":[{"code":"200","description":"OK","schema":"JsonVO«boolean»"},{"code":"201","description":"Created","schema":null},{"code":"401","description":"Unauthorized","schema":null},{"code":"403","description":"Forbidden","schema":null},{"code":"404","description":"Not Found","schema":null}],"multipartResponseSchema":false,"multipCodeDatas":[{"code":"200","responseHeaderParameters":null,"data":[{"name":"code","children":null,"description":"状态码","id":"param16","type":"integer(int32)","schemaValue":"integer(int32)"},{"name":"data","children":null,"description":"数据对象","id":"param17","type":"boolean","schemaValue":null},{"name":"message","children":null,"description":"提示消息","id":"param18","type":"string","schemaValue":null}],"responseBasicType":false,"responseText":null,"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": true,\n\t\"message\": \"提示消息内容\"\n}"}],"responseHeaderParameters":null,"multipData":{"oas2":true,"code":"200","description":"OK","schema":"JsonVO«boolean»","schemaTitle":null,"refTreetableparameters":[],"responseCodes":[],"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": true,\n\t\"message\": \"提示消息内容\"\n}","responseJson":{"code":10000,"data":true,"message":"提示消息内容"},"responseText":null,"responseBasicType":false,"responseHeaderParameters":null,"responseParameters":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param16","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"boolean","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param17","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param18","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}],"responseParameterRefName":"JsonVO«boolean»","responseRefParameters":[],"responseTreetableRefParameters":[],"responseDescriptions":{"code":"状态码","data":"数据对象","message":"提示消息"},"data":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param16","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"boolean","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param17","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param18","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]}},{"id":"8102379457a2f281c21d74cda839c9f6","operationId":"modifyAreaUsingPOST","deprecated":false,"summary":"修改地区","methodType":"POST","showUrl":"/j3-area/modifyArea","consumes":["application/json"],"produces":["*/*"],"author":null,"description":"","requestValue":null,"reqParameters":[{"name":"id","children":null,"description":"地区id","in":"query","require":true,"type":"integer(int32)","schemaValue":null},{"name":"intro","children":null,"description":"介绍","in":"query","require":false,"type":"string","schemaValue":null},{"name":"name","children":null,"description":"地区名","in":"query","require":false,"type":"string","schemaValue":null},{"name":"parentId","children":null,"description":"父级地区id","in":"query","require":false,"type":"integer(int32)","schemaValue":null},{"name":"sort","children":null,"description":"排序号","in":"query","require":false,"type":"integer(int32)","schemaValue":null},{"name":"visible","children":null,"description":"是否使用","in":"query","require":false,"type":"integer(int32)","schemaValue":null}],"responseCodes":[{"code":"200","description":"OK","schema":"JsonVO«boolean»"},{"code":"201","description":"Created","schema":null},{"code":"401","description":"Unauthorized","schema":null},{"code":"403","description":"Forbidden","schema":null},{"code":"404","description":"Not Found","schema":null}],"multipartResponseSchema":false,"multipCodeDatas":[{"code":"200","responseHeaderParameters":null,"data":[{"name":"code","children":null,"description":"状态码","id":"param28","type":"integer(int32)","schemaValue":"integer(int32)"},{"name":"data","children":null,"description":"数据对象","id":"param29","type":"boolean","schemaValue":null},{"name":"message","children":null,"description":"提示消息","id":"param30","type":"string","schemaValue":null}],"responseBasicType":false,"responseText":null,"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": true,\n\t\"message\": \"提示消息内容\"\n}"}],"responseHeaderParameters":null,"multipData":{"oas2":true,"code":"200","description":"OK","schema":"JsonVO«boolean»","schemaTitle":null,"refTreetableparameters":[],"responseCodes":[],"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": true,\n\t\"message\": \"提示消息内容\"\n}","responseJson":{"code":10000,"data":true,"message":"提示消息内容"},"responseText":null,"responseBasicType":false,"responseHeaderParameters":null,"responseParameters":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param28","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"boolean","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param29","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param30","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}],"responseParameterRefName":"JsonVO«boolean»","responseRefParameters":[],"responseTreetableRefParameters":[],"responseDescriptions":{"code":"状态码","data":"数据对象","message":"提示消息"},"data":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param28","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"boolean","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param29","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param30","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]}},{"id":"2233b124718dde64205f7c8e77f564ba","operationId":"listAreaUsingGET","deprecated":false,"summary":"获取区域列表","methodType":"GET","showUrl":"/j3-area/query-list-area","consumes":["application/x-www-form-urlencoded"],"produces":["*/*"],"author":null,"description":"","requestValue":null,"reqParameters":[{"name":"pageIndex","children":null,"description":"查询页码","in":"query","require":false,"type":"integer(int64)","schemaValue":null},{"name":"pageSize","children":null,"description":"查询条数","in":"query","require":false,"type":"integer(int64)","schemaValue":null},{"name":"queryCondition","children":null,"description":"查询条件","in":"query","require":false,"type":"string","schemaValue":null}],"responseCodes":[{"code":"200","description":"OK","schema":"JsonVO«PageDTO«地区分页查询请求体参数»»"},{"code":"401","description":"Unauthorized","schema":null},{"code":"403","description":"Forbidden","schema":null},{"code":"404","description":"Not Found","schema":null}],"multipartResponseSchema":false,"multipCodeDatas":[{"code":"200","responseHeaderParameters":null,"data":[{"name":"code","children":null,"description":"状态码","id":"param51","type":"integer(int32)","schemaValue":"integer(int32)"},{"name":"data","children":[{"name":"pageIndex","children":null,"description":"当前页码","id":"param101","type":"integer(int64)","schemaValue":null},{"name":"pageSize","children":null,"description":"每页显示最大数据条数","id":"param102","type":"integer(int64)","schemaValue":null},{"name":"pages","children":null,"description":"总页数","id":"param103","type":"integer(int64)","schemaValue":null},{"name":"rows","children":[{"name":"id","children":null,"description":"地区id","id":"param116","type":"integer","schemaValue":null},{"name":"intro","children":null,"description":"介绍","id":"param117","type":"string","schemaValue":null},{"name":"name","children":null,"description":"地区名","id":"param118","type":"string","schemaValue":null},{"name":"parentID","children":null,"description":"父级ID","id":"param119","type":"string","schemaValue":null},{"name":"sort","children":null,"description":"排序号","id":"param120","type":"integer","schemaValue":null},{"name":"visible","children":null,"description":"是否使用","id":"param121","type":"integer","schemaValue":null}],"description":"当前页数据列表","id":"param104","type":"array","schemaValue":"地区分页查询请求体参数"},{"name":"total","children":null,"description":"总条数","id":"param111","type":"integer(int64)","schemaValue":null}],"description":"数据对象","id":"param52","type":"PageDTO«地区分页查询请求体参数»","schemaValue":"PageDTO«地区分页查询请求体参数»"},{"name":"message","children":null,"description":"提示消息","id":"param75","type":"string","schemaValue":null}],"responseBasicType":false,"responseText":null,"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": {\n\t\t\"pageIndex\": 1,\n\t\t\"pageSize\": 10,\n\t\t\"pages\": 100,\n\t\t\"rows\": [\n\t\t\t{\n\t\t\t\t\"id\": 1,\n\t\t\t\t\"intro\": \"xxxx\",\n\t\t\t\t\"name\": \"西南地区\",\n\t\t\t\t\"parentID\": 10,\n\t\t\t\t\"sort\": 1,\n\t\t\t\t\"visible\": 1\n\t\t\t}\n\t\t],\n\t\t\"total\": 100000\n\t},\n\t\"message\": \"提示消息内容\"\n}"}],"responseHeaderParameters":null,"multipData":{"oas2":true,"code":"200","description":"OK","schema":"JsonVO«PageDTO«地区分页查询请求体参数»»","schemaTitle":null,"refTreetableparameters":[],"responseCodes":[],"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": {\n\t\t\"pageIndex\": 1,\n\t\t\"pageSize\": 10,\n\t\t\"pages\": 100,\n\t\t\"rows\": [\n\t\t\t{\n\t\t\t\t\"id\": 1,\n\t\t\t\t\"intro\": \"xxxx\",\n\t\t\t\t\"name\": \"西南地区\",\n\t\t\t\t\"parentID\": 10,\n\t\t\t\t\"sort\": 1,\n\t\t\t\t\"visible\": 1\n\t\t\t}\n\t\t],\n\t\t\"total\": 100000\n\t},\n\t\"message\": \"提示消息内容\"\n}","responseJson":{"code":10000,"data":{"pageIndex":1,"pageSize":10,"pages":100,"rows":[{"id":1,"intro":"xxxx","name":"西南地区","parentID":10,"sort":1,"visible":1}],"total":100000},"message":"提示消息内容"},"responseText":null,"responseBasicType":false,"responseHeaderParameters":null,"responseParameters":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param51","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"PageDTO«地区分页查询请求体参数»","in":null,"schema":true,"schemaValue":"PageDTO«地区分页查询请求体参数»","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param52","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":[{"children":null,"childrenTypes":[],"def":null,"description":"当前页码","enum":null,"example":1,"id":"param101","ignoreFilterName":null,"in":null,"level":1,"name":"pageIndex","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"每页显示最大数据条数","enum":null,"example":10,"id":"param102","ignoreFilterName":null,"in":null,"level":1,"name":"pageSize","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"总页数","enum":null,"example":100,"id":"param103","ignoreFilterName":null,"in":null,"level":1,"name":"pages","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null},{"children":[{"name":"id","ignoreFilterName":null,"require":true,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区id","txtValue":null,"enum":null,"id":"param116","pid":"param104","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"intro","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"介绍","txtValue":null,"enum":null,"id":"param117","pid":"param104","level":2,"show":true,"example":"xxxx","childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"name","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区名","txtValue":null,"enum":null,"id":"param118","pid":"param104","level":2,"show":true,"example":"西南地区","childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"parentID","ignoreFilterName":null,"require":true,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父级ID","txtValue":null,"enum":null,"id":"param119","pid":"param104","level":2,"show":true,"example":10,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"sort","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"排序号","txtValue":null,"enum":null,"id":"param120","pid":"param104","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"visible","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"是否使用","txtValue":null,"enum":null,"id":"param121","pid":"param104","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]}],"childrenTypes":[],"def":null,"description":"当前页数据列表","enum":null,"id":"param104","ignoreFilterName":null,"in":null,"level":1,"name":"rows","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":true,"schemaValue":"地区分页查询请求体参数","show":true,"txtValue":null,"type":"array","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"总条数","enum":null,"example":100000,"id":"param111","ignoreFilterName":null,"in":null,"level":1,"name":"total","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null}],"parentTypes":["PageDTO«地区分页查询请求体参数»"]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param75","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}],"responseParameterRefName":"JsonVO«PageDTO«地区分页查询请求体参数»»","responseRefParameters":[{"name":"PageDTO«地区分页查询请求体参数»","params":[{"name":"pageIndex","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"当前页码","txtValue":null,"enum":null,"id":"param53","pid":"param52","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"pageSize","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"每页显示最大数据条数","txtValue":null,"enum":null,"id":"param54","pid":"param52","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"pages","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"总页数","txtValue":null,"enum":null,"id":"param55","pid":"param52","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"rows","ignoreFilterName":null,"require":false,"type":"array","in":null,"schema":true,"schemaValue":"地区分页查询请求体参数","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"当前页数据列表","txtValue":null,"enum":null,"id":"param56","pid":"param52","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"total","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"总条数","txtValue":null,"enum":null,"id":"param63","pid":"param52","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]},{"name":"地区分页查询请求体参数","params":[{"name":"id","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区id","txtValue":null,"enum":null,"id":"param57","pid":"param56","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"intro","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"介绍","txtValue":null,"enum":null,"id":"param58","pid":"param56","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"name","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区名","txtValue":null,"enum":null,"id":"param59","pid":"param56","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"parentID","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父级ID","txtValue":null,"enum":null,"id":"param60","pid":"param56","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"sort","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"排序号","txtValue":null,"enum":null,"id":"param61","pid":"param56","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"visible","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"是否使用","txtValue":null,"enum":null,"id":"param62","pid":"param56","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]}],"responseTreetableRefParameters":[{"init":false,"id":"param52","name":"PageDTO«地区分页查询请求体参数»","params":[{"name":"pageIndex","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"当前页码","txtValue":null,"enum":null,"id":"param64","pid":"param52","level":1,"show":true,"readOnly":false,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"]},{"name":"pageSize","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"每页显示最大数据条数","txtValue":null,"enum":null,"id":"param65","pid":"param52","level":1,"show":true,"readOnly":false,"example":10,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"]},{"name":"pages","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"总页数","txtValue":null,"enum":null,"id":"param66","pid":"param52","level":1,"show":true,"readOnly":false,"example":100,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"]},{"name":"rows","ignoreFilterName":null,"require":false,"type":"array","in":null,"schema":true,"schemaValue":"地区分页查询请求体参数","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"当前页数据列表","txtValue":null,"enum":null,"id":"param67","pid":"param52","level":1,"show":true,"readOnly":false,"example":"","childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"]},{"name":"total","ignoreFilterName":null,"require":false,"type":"integer(int64)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"总条数","txtValue":null,"enum":null,"id":"param74","pid":"param52","level":1,"show":true,"readOnly":false,"example":100000,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"]}],"level":1,"childrenTypes":[]},{"init":false,"id":"param67","name":"地区分页查询请求体参数","params":[{"name":"id","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区id","txtValue":null,"enum":null,"id":"param68","pid":"param67","level":1,"show":true,"readOnly":false,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"intro","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"介绍","txtValue":null,"enum":null,"id":"param69","pid":"param67","level":1,"show":true,"readOnly":false,"example":"xxxx","childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"name","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区名","txtValue":null,"enum":null,"id":"param70","pid":"param67","level":1,"show":true,"readOnly":false,"example":"西南地区","childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"parentID","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父级ID","txtValue":null,"enum":null,"id":"param71","pid":"param67","level":1,"show":true,"readOnly":false,"example":10,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"sort","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"排序号","txtValue":null,"enum":null,"id":"param72","pid":"param67","level":1,"show":true,"readOnly":false,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"visible","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"是否使用","txtValue":null,"enum":null,"id":"param73","pid":"param67","level":1,"show":true,"readOnly":false,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]}],"level":1,"childrenTypes":[]}],"responseDescriptions":{"code":"状态码","data":"数据对象","data>pageIndex":"当前页码","data>pageSize":"每页显示最大数据条数","data>pages":"总页数","data>rows":"当前页数据列表","data>rows>id":"地区id","data>rows>intro":"介绍","data>rows>name":"地区名","data>rows>parentID":"父级ID","data>rows>sort":"排序号","data>rows>visible":"是否使用","data>total":"总条数","data>total>id":"地区id","data>total>intro":"介绍","data>total>name":"地区名","data>total>parentID":"父级ID","data>total>sort":"排序号","data>total>visible":"是否使用","message":"提示消息","message>pageIndex":"当前页码","message>pageSize":"每页显示最大数据条数","message>pages":"总页数","message>rows":"当前页数据列表","message>rows>id":"地区id","message>rows>intro":"介绍","message>rows>name":"地区名","message>rows>parentID":"父级ID","message>rows>sort":"排序号","message>rows>visible":"是否使用","message>total":"总条数","message>total>id":"地区id","message>total>intro":"介绍","message>total>name":"地区名","message>total>parentID":"父级ID","message>total>sort":"排序号","message>total>visible":"是否使用"},"data":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param51","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"PageDTO«地区分页查询请求体参数»","in":null,"schema":true,"schemaValue":"PageDTO«地区分页查询请求体参数»","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param52","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":[{"children":null,"childrenTypes":[],"def":null,"description":"当前页码","enum":null,"example":1,"id":"param101","ignoreFilterName":null,"in":null,"level":1,"name":"pageIndex","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"每页显示最大数据条数","enum":null,"example":10,"id":"param102","ignoreFilterName":null,"in":null,"level":1,"name":"pageSize","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"总页数","enum":null,"example":100,"id":"param103","ignoreFilterName":null,"in":null,"level":1,"name":"pages","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null},{"children":[{"name":"id","ignoreFilterName":null,"require":true,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区id","txtValue":null,"enum":null,"id":"param116","pid":"param104","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"intro","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"介绍","txtValue":null,"enum":null,"id":"param117","pid":"param104","level":2,"show":true,"example":"xxxx","childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"name","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区名","txtValue":null,"enum":null,"id":"param118","pid":"param104","level":2,"show":true,"example":"西南地区","childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"parentID","ignoreFilterName":null,"require":true,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父级ID","txtValue":null,"enum":null,"id":"param119","pid":"param104","level":2,"show":true,"example":10,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"sort","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"排序号","txtValue":null,"enum":null,"id":"param120","pid":"param104","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]},{"name":"visible","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"是否使用","txtValue":null,"enum":null,"id":"param121","pid":"param104","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»","地区分页查询请求体参数"]}],"childrenTypes":[],"def":null,"description":"当前页数据列表","enum":null,"id":"param104","ignoreFilterName":null,"in":null,"level":1,"name":"rows","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":true,"schemaValue":"地区分页查询请求体参数","show":true,"txtValue":null,"type":"array","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"总条数","enum":null,"example":100000,"id":"param111","ignoreFilterName":null,"in":null,"level":1,"name":"total","parentTypes":["PageDTO«地区分页查询请求体参数»","PageDTO«地区分页查询请求体参数»"],"pid":"param52","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int64)","validateInstance":null,"validateStatus":false,"value":null}],"parentTypes":["PageDTO«地区分页查询请求体参数»"]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param75","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]}},{"id":"6b13b7aa66ef1e8dce603b2fe5e81b46","operationId":"queryTreeUsingGET","deprecated":false,"summary":"获取区域名称结构树","methodType":"GET","showUrl":"/j3-area/query-tree","consumes":["application/x-www-form-urlencoded"],"produces":["*/*"],"author":null,"description":"","requestValue":null,"reqParameters":[{"name":"depth","children":null,"description":"深度","in":"query","require":false,"type":"integer(int32)","schemaValue":null},{"name":"id","children":null,"description":"父ID","in":"query","require":false,"type":"integer(int32)","schemaValue":null}],"responseCodes":[{"code":"200","description":"OK","schema":"JsonVO«List«区域名称结构树请求实体»»"},{"code":"401","description":"Unauthorized","schema":null},{"code":"403","description":"Forbidden","schema":null},{"code":"404","description":"Not Found","schema":null}],"multipartResponseSchema":false,"multipCodeDatas":[{"code":"200","responseHeaderParameters":null,"data":[{"name":"code","children":null,"description":"状态码","id":"param133","type":"integer(int32)","schemaValue":"integer(int32)"},{"name":"data","children":[{"name":"areaName","children":null,"description":"树名称","id":"param159","type":"string","schemaValue":null},{"name":"depth","children":null,"description":"地区等级（树深度）","id":"param160","type":"integer(int32)","schemaValue":null},{"name":"nodes","children":[{"name":"depth","children":null,"description":"深度","id":"param167","type":"integer","schemaValue":null},{"name":"id","children":null,"description":"父ID","id":"param168","type":"integer","schemaValue":null}],"description":"子地区节点","id":"param161","type":"array","schemaValue":"获取区域名称结构树"}],"description":"数据对象","id":"param134","type":"array","schemaValue":"区域名称结构树请求实体"},{"name":"message","children":null,"description":"提示消息","id":"param145","type":"string","schemaValue":null}],"responseBasicType":false,"responseText":null,"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": [\n\t\t{\n\t\t\t\"areaName\": \"\",\n\t\t\t\"depth\": 0,\n\t\t\t\"nodes\": [\n\t\t\t\t{\n\t\t\t\t\t\"depth\": 1,\n\t\t\t\t\t\"id\": 1\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t],\n\t\"message\": \"提示消息内容\"\n}"}],"responseHeaderParameters":null,"multipData":{"oas2":true,"code":"200","description":"OK","schema":"JsonVO«List«区域名称结构树请求实体»»","schemaTitle":null,"refTreetableparameters":[],"responseCodes":[],"responseValue":"{\n\t\"code\": 10000,\n\t\"data\": [\n\t\t{\n\t\t\t\"areaName\": \"\",\n\t\t\t\"depth\": 0,\n\t\t\t\"nodes\": [\n\t\t\t\t{\n\t\t\t\t\t\"depth\": 1,\n\t\t\t\t\t\"id\": 1\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t],\n\t\"message\": \"提示消息内容\"\n}","responseJson":{"code":10000,"data":[{"areaName":"","depth":0,"nodes":[{"depth":1,"id":1}]}],"message":"提示消息内容"},"responseText":null,"responseBasicType":false,"responseHeaderParameters":null,"responseParameters":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param133","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"array","in":null,"schema":true,"schemaValue":"区域名称结构树请求实体","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param134","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":[{"children":null,"childrenTypes":[],"def":null,"description":"树名称","enum":null,"id":"param159","ignoreFilterName":null,"in":null,"level":1,"name":"areaName","parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"],"pid":"param134","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"string","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"地区等级（树深度）","enum":null,"id":"param160","ignoreFilterName":null,"in":null,"level":1,"name":"depth","parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"],"pid":"param134","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int32)","validateInstance":null,"validateStatus":false,"value":null},{"children":[{"name":"depth","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"深度","txtValue":null,"enum":null,"id":"param167","pid":"param161","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体","获取区域名称结构树"]},{"name":"id","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父ID","txtValue":null,"enum":null,"id":"param168","pid":"param161","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体","获取区域名称结构树"]}],"childrenTypes":[],"def":null,"description":"子地区节点","enum":null,"id":"param161","ignoreFilterName":null,"in":null,"level":1,"name":"nodes","parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"],"pid":"param134","require":false,"schema":true,"schemaValue":"获取区域名称结构树","show":true,"txtValue":null,"type":"array","validateInstance":null,"validateStatus":false,"value":null}],"parentTypes":["区域名称结构树请求实体"]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param145","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}],"responseParameterRefName":"JsonVO«List«区域名称结构树请求实体»»","responseRefParameters":[{"name":"区域名称结构树请求实体","params":[{"name":"areaName","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"树名称","txtValue":null,"enum":null,"id":"param135","pid":"param134","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"depth","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区等级（树深度）","txtValue":null,"enum":null,"id":"param136","pid":"param134","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"nodes","ignoreFilterName":null,"require":false,"type":"array","in":null,"schema":true,"schemaValue":"获取区域名称结构树","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"子地区节点","txtValue":null,"enum":null,"id":"param137","pid":"param134","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]},{"name":"获取区域名称结构树","params":[{"name":"depth","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"深度","txtValue":null,"enum":null,"id":"param138","pid":"param137","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]},{"name":"id","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父ID","txtValue":null,"enum":null,"id":"param139","pid":"param137","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]}],"responseTreetableRefParameters":[{"init":false,"id":"param134","name":"区域名称结构树请求实体","params":[{"name":"areaName","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"树名称","txtValue":null,"enum":null,"id":"param140","pid":"param134","level":1,"show":true,"readOnly":false,"example":"","childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"]},{"name":"depth","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"地区等级（树深度）","txtValue":null,"enum":null,"id":"param141","pid":"param134","level":1,"show":true,"readOnly":false,"example":"","childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"]},{"name":"nodes","ignoreFilterName":null,"require":false,"type":"array","in":null,"schema":true,"schemaValue":"获取区域名称结构树","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"子地区节点","txtValue":null,"enum":null,"id":"param142","pid":"param134","level":1,"show":true,"readOnly":false,"example":"","childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"]}],"level":1,"childrenTypes":[]},{"init":false,"id":"param142","name":"获取区域名称结构树","params":[{"name":"depth","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"深度","txtValue":null,"enum":null,"id":"param143","pid":"param142","level":1,"show":true,"readOnly":false,"example":1,"childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体","获取区域名称结构树"]},{"name":"id","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父ID","txtValue":null,"enum":null,"id":"param144","pid":"param142","level":1,"show":true,"readOnly":false,"example":1,"childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体","获取区域名称结构树"]}],"level":1,"childrenTypes":[]}],"responseDescriptions":{"code":"状态码","data":"数据对象","data>areaName":"树名称","data>depth":"地区等级（树深度）","data>nodes":"子地区节点","data>nodes>depth":"深度","data>nodes>id":"父ID","message":"提示消息","message>areaName":"树名称","message>depth":"地区等级（树深度）","message>nodes":"子地区节点","message>nodes>depth":"深度","message>nodes>id":"父ID"},"data":[{"name":"code","ignoreFilterName":null,"require":false,"type":"integer(int32)","in":null,"schema":true,"schemaValue":"integer(int32)","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"状态码","txtValue":null,"enum":null,"id":"param133","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":["integer(int32)"]},{"name":"data","ignoreFilterName":null,"require":false,"type":"array","in":null,"schema":true,"schemaValue":"区域名称结构树请求实体","value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"数据对象","txtValue":null,"enum":null,"id":"param134","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":[{"children":null,"childrenTypes":[],"def":null,"description":"树名称","enum":null,"id":"param159","ignoreFilterName":null,"in":null,"level":1,"name":"areaName","parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"],"pid":"param134","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"string","validateInstance":null,"validateStatus":false,"value":null},{"children":null,"childrenTypes":[],"def":null,"description":"地区等级（树深度）","enum":null,"id":"param160","ignoreFilterName":null,"in":null,"level":1,"name":"depth","parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"],"pid":"param134","require":false,"schema":false,"schemaValue":null,"show":true,"txtValue":null,"type":"integer(int32)","validateInstance":null,"validateStatus":false,"value":null},{"children":[{"name":"depth","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"深度","txtValue":null,"enum":null,"id":"param167","pid":"param161","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体","获取区域名称结构树"]},{"name":"id","ignoreFilterName":null,"require":false,"type":"integer","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"父ID","txtValue":null,"enum":null,"id":"param168","pid":"param161","level":2,"show":true,"example":1,"childrenTypes":[],"children":null,"parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体","获取区域名称结构树"]}],"childrenTypes":[],"def":null,"description":"子地区节点","enum":null,"id":"param161","ignoreFilterName":null,"in":null,"level":1,"name":"nodes","parentTypes":["区域名称结构树请求实体","区域名称结构树请求实体"],"pid":"param134","require":false,"schema":true,"schemaValue":"获取区域名称结构树","show":true,"txtValue":null,"type":"array","validateInstance":null,"validateStatus":false,"value":null}],"parentTypes":["区域名称结构树请求实体"]},{"name":"message","ignoreFilterName":null,"require":false,"type":"string","in":null,"schema":false,"schemaValue":null,"value":null,"validateStatus":false,"validateInstance":null,"def":null,"description":"提示消息","txtValue":null,"enum":null,"id":"param145","pid":"-1","level":1,"show":true,"readOnly":false,"example":null,"childrenTypes":[],"children":null,"parentTypes":[]}]}}],"hasNew":false,"hasChanged":true}]};
+        //console(datas);
+        return datas;
+      }
+
+      function main(){
+        //当前接口json数据
+        var d=getData();
+        //请求参数table-header
+        const requestcolumns = [
+          {
+            title: "参数名称",
+            dataIndex: "name",
+            width: "30%"
+          },
+          {
+            title: "参数说明",
+            dataIndex: "description",
+            width: "25%"
+          },
+          {
+            title: "请求类型",
+            dataIndex: "in",
+            scopedSlots: { customRender: "typeTemplate" }
+          },
+          {
+            title: "是否必须",
+            dataIndex: "require",
+            scopedSlots: { customRender: "requireTemplate" }
+          },
+          {
+            title: "数据类型",
+            dataIndex: "type",
+            scopedSlots: { customRender: "datatypeTemplate" }
+          },
+          {
+            title: "schema",
+            dataIndex: "schemaValue",
+            width: "15%"
+          }
+        ];
+        //响应状态table-header
+        const responseStatuscolumns = [
+          {
+            title: "状态码",
+            dataIndex: "code",
+            width: "20%"
+          },
+          {
+            title: "说明",
+            dataIndex: "description",
+            width: "55%",
+            scopedSlots: { customRender: "descriptionTemplate" }
+          },
+          {
+            title: "schema",
+            dataIndex: "schema"
+          }
+        ];
+        //响应头-header
+        const responseHeaderColumns = [
+          {
+            title: "参数名称",
+            dataIndex: "name",
+            width: "30%"
+          },
+          {
+            title: "参数说明",
+            dataIndex: "description",
+            width: "55%"
+          },
+          {
+            title: "数据类型",
+            dataIndex: "type"
+          }
+        ];
+        const responseParametersColumns = [
+          {
+            title: "参数名称",
+            dataIndex: "name",
+            width: "35%"
+          },
+          {
+            title: "参数说明",
+            dataIndex: "description",
+            width: "40%"
+          },
+          {
+            title: "类型",
+            dataIndex: "type"
+          },
+          {
+            title: "schema",
+            dataIndex: "schemaValue",
+            width: "15%"
+          }
+        ];
+        //dataType组件
+        var dataType={
+          name: "DataType",
+          props: {
+            text: {
+              type: String,
+              required: true
+            },
+            record: {
+              type: Object,
+              required: true
+            }
+          },
+          data:function(){
+            return {
+               validators: []
+            }
+          },
+          created() {
+            this.intiValidator();
+          },
+          methods: {
+            intiValidator() {
+              var that = this;
+              const record = this.record;
+              if (record.validateInstance != null) {
+                var len = that.getJsonKeyLength(record.validateInstance);
+                var _size = 0;
+                for (var k in record.validateInstance) {
+                  var str = k + ":" + record.validateInstance[k];
+                  that.validators.push({ key: k, val: str });
+                }
+              }
+            },
+            getJsonKeyLength(json) {
+              var size = 0;
+              if (json != null) {
+                for (var key in json) {
+                  if (json.hasOwnProperty(key)) size++;
+                }
+              }
+              return size;
+            }
+          },
+          template:'<div><span v-if="!record.validateStatus">{{text}}</span><span v-else class="knife4j-request-validate-jsr"><a-tooltip placement="right"><template slot="title"><div v-for="pt in validators" :key="pt.key">{{pt.val}}</div></template>{{text}}</a-tooltip></span></div>'
+
+        }
+        var data={
+          tags:d.tags,
+          instance:d.instance,
+          columns: requestcolumns,
+          responseHeaderColumns: responseHeaderColumns,
+          responseStatuscolumns: responseStatuscolumns,
+          responseParametersColumns: responseParametersColumns,
+          expanRows: true,
+          //接收一个响应信息对象,遍历得到树形结构的值
+          multipCode: false,
+          multipCodeDatas: [],
+          multipData: {},
+          page: false,
+          hideShow:true
+        }
+        new Vue({
+          el:"#knife4jDocument",
+          components:{
+            "DataType":dataType
+          },
+          data(){
+            return data
+          },
+          mounted(){
+             //初始化完成
+            //赋予点击事件;
+            document.getElementById("btnHide").addEventListener("click",function(){
+              //隐藏目录
+              var doc=document.getElementById("knife4jDoc");
+              var docGlobal=document.getElementById("knife4j-doc-m");
+              if(doc.style.display=="none"){
+                doc.style.display="";
+                document.getElementById("btnHide").innerHTML="隐 藏";
+                docGlobal.style.width="400px";
+                docGlobal.style.height="500px";
+              }else{
+                doc.style.display="none";
+                document.getElementById("btnHide").innerHTML="目 录";
+                docGlobal.style.width="52px";
+                docGlobal.style.height="35px";
+              }
+            })
+          },
+          created(){
+           
+          },
+          methods:{
+            genUnionTableKey() {
+              var key="param"+new Date().getTime().toString() + Math.floor(Math.random() * 1000000).toString();
+              return key;
+            },
+            formaterJson(json) {
+              try {
+                if (typeof json != "string") {
+                  json = JSON.stringify(json, undefined, 2);
+                }
+                json = json
+                  .replace(/&/g, "&")
+                  .replace(/</g, "<")
+                  .replace(/>/g, ">");
+                return json.replace(
+                  /("(\u[a-zA-Z0-9]{4}|\[^u]|[^\"])*"(s*:)?|(true|false|null)|-?d+(?:.d*)?(?:[eE][+-]?d+)?)/g,
+                  function(match) {
+                    var cls = "number";
+                    if (/^"/.test(match)) {
+                      if (/:$/.test(match)) {
+                        cls = "key";
+                      } else {
+                        cls = "string";
+                      }
+                    } else if (/true|false/.test(match)) {
+                      cls = "boolean";
+                    } else if (/null/.test(match)) {
+                      cls = "null";
+                    }
+                    return '<span class="' + cls + '">' + match + "</span>";
+                  }
+                );
+              } catch (error) {
+                return json;
+              }
+            }
+          }
+        })
+
+      }
+
+      main();
+      
+      
+    </script>
+  </body>
+  </html>

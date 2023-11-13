@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\ApiDeclarativeServicesHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\OtherComponent.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\Router.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\DoInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\GlobalInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\other_income_statement\Other_income_statementDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\other_income_statement\Other_income_statementController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\expenditures\ExpendituresDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\expenditures\ExpendituresQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\expenditures\ExpendituresController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\flowrecord\FlowrecordController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\flowrecord\FlowrecordDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\flowrecord\FlowrecordQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\flowrecord\FlowrecordPageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\expendituresquery\ExpendituresQueryPageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\dto\other_income_statement\IncomeDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\query\other_income_statement\IncomeQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\vo\other_income_statement\IncomePageJsonVO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\other_income_statement\IncomeController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\flowrecord\FlowrecordDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\flowrecord\FlowrecordDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\flowrecord\FlowrecordService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\flowrecord\FlowrecordMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\expenditures\ExpendituresService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\expenditures\ExpendituresDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\expenditures\ExpendituresMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uselib\fastdfs\useFastDFS.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uselib\excel\useExcel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\expenditures\ExpendituresDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\other_income_statement\Other_income_statementDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\other_income_statement\Other_income_statementService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\other_income_statement\Other_income_statementDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\other_income_statement\Other_income_statementMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\other_income_statement\IncomeDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dao\other_income_statement\IncomeMapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="service\other_income_statement\IncomeService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\do\other_income_statement\IncomeDO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="uselib\jwt\TestToken.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\Router.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\SystemInterceptor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\other_income_statement\Other_income_statementController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\expenditures\ExpendituresController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\flowrecord\FlowrecordController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\other_income_statement\IncomeController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\flowrecord\FlowrecordDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\flowrecord\FlowrecordService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\expenditures\ExpendituresService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\expenditures\ExpendituresDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="uselib\fastdfs\useFastDFS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="uselib\excel\useExcel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\other_income_statement\Other_income_statementService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\other_income_statement\Other_income_statementDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dao\other_income_statement\IncomeDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service\other_income_statement\IncomeService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="uselib\jwt\TestToken.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

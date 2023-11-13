@@ -1,0 +1,5 @@
+server:
+  port: ${sp.sysindex}
+spring:
+  application:
+    name: ${sn.sysindex}

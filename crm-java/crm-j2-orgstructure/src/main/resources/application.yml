@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ${sn.j2-orgstructure}
+  cloud:
+    sentinel:
+      transport:
+        dashboard: ${sentinel.dashboard}
+      eager: true
+server:
+  port: ${sp.j2-orgstructure}
+  servlet:
+    context-path: /orgstructure
+feign:
+  sentinel:
+    enabled: true

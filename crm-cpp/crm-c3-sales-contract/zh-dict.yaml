@@ -1,0 +1,198 @@
+﻿contractindex:
+ controller:
+  delete-details:
+   summary: 删除销售合同明细
+  delete-contract:    
+   summary: 删除销售合同
+  add-contract:
+   summary: 添加销售合同  
+ field:
+  list_id: 订单项ID
+  contract_id: 合同ID
+  contract_no: 合同编号
+  title: 标题
+  customer_id: 客户ID
+  customer_name: 客户名称
+  linkman_id: 客户联系人ID
+  linkman_name: 客户联系人名称
+  chance_id: 客户销售机会
+  chance_name: 销售机会名称
+  start_date: 起始日期
+  end_date: 结束日期
+  money: 合同金额
+  intro: 介绍
+  our_user_id: 我方代表ID
+  our_user_name: 我方代表名称
+getindex:
+ controller:
+  get-salesNo:
+   summary: 获取销售合同唯一编号
+  get-contract-goods:
+   summary: 获取合同清单    
+  querySalContList:
+   summary: 获取销售合同下拉列表
+ field:
+  contract_id: 销售合同id
+  contract_no: 销售合同唯一编号
+  goods_id: 商品ID
+  goods_name: 商品名称
+  goods_spec_format: 商品规格
+  sku_name: 商品规格(SKU)
+  sale_price: 商品销售价格
+  num: 购买数量
+  goods_money: 商品总价
+  comments: 备注
+  title: 销售合同主题
+sending:
+sendSms:
+  summary: "发送短信"
+  phoneNumber: "电话号码"
+  message: "消息"
+sendEmail:
+  summary: "发送邮件"
+  emailAddress: "邮件地址"
+  subject: "邮件主题"
+  recipient_name: "接收人"
+  context: "正文"
+sal-contract:
+ modify-basic-info:
+  summary: 修改销售合同基础信息
+ modify-deliver-status:
+  summary: 修改交付状态
+ field:
+  contract-id: 合同ID
+  contract-no: 合同编号
+  title: 订单主题
+  customer-id: 客户ID
+  linkman-id: 联系人ID
+  start-date: 开始时间
+  end-date: 结束时间
+  money: 合同金额
+  intro: 订单介绍
+  our-user-id: 我方联系人
+  deliver-status: 交付状态
+sal-contract-list:
+ input-list:
+  summary: 录入明细
+ field:
+  contract-id: 合同ID
+  goods-name: 商品名称
+  goods-id: 商品ID
+  sku-id: skuID
+  sku-name: sku名称
+  sale-price: 商品价格
+  num: 购买数量
+  goods-money: 商品总价
+  remarks: 备注
+
+SalesContract:
+ get-sales-contract-list:
+  summary: 获取销售合同列表
+ export-sales-contract:
+  summary: 导出销售合同
+ get-sales-contract-detail-list:
+  summary: 获取合同详情
+ field:
+  title: 订单主题
+  contract_id: 销售合同ID
+  customer_id: 客户ID
+  name: 客户名称
+  customer_name: 客户名称
+  linkman_id: 联系人ID
+  linkman_name: 联系人姓名
+  money: 合同金额
+  zero_money: 去零金额
+  back_money: 回款金额
+  owe_money: 欠款金额
+  back_status: 回款状态
+  invoice_money: 开票金额
+  invoice_status: 开票状态
+  start_date: 开始时间
+  end_date: 结束时间
+  deliver_money: 交付金额
+  status: 订单状态
+  deliver_status: 交付状态
+  content: 备注
+  contract_no: 合同编号
+  chance_id: 销售机绘ID
+  website_id: 关联网站
+  our_user_id: 我方联系人
+  intro: 订单介绍
+  renew_status: 订单类型
+  create_user_id: 创建者
+  create_time: 创建时间
+  goods_money: 商品金额
+File:
+ upload:
+  summary: 单文件上传
+ field:
+  filename: 文件名
+  file-url: 图片src
+  file-alt: 图片文字描述
+  file-href: 图片链接地址
+OutBound:
+ controller:
+  summary: 生成出库单
+ filed:
+  owner_user_id: 用户ID   
+
+contract:
+ controller:
+  querySalContList: 获取销售合同列表数据（用于输入表单下拉列表）
+  queryContractNo: 获取销售合同唯一编号
+  querySalesContractList: 获取销售合同列表（分页+条件）
+  querySalConDetList: 获取合同详情
+  queryContractGoods: 获取合同清单
+  addSalesContract: 添加销售合同
+  deleteSalesContract: 删除销售合同
+  modifyBasicInfo: 修改销售合同基础信息
+  modifyDeliverStatus: 修改交付状态
+  inputList: 录入明细
+  deleteDetails: 删除明细
+  uploadFile: 添加合同附件
+  GenerateOutboundOrder: 生成出库单
+  querySalesContract: 导出销售合同
+  SmsController: 发短信（支持批量）
+  sendEmail: 发邮件（支持批量）
+
+ 
+out_stock:
+ controller:
+  get:
+   summary1: 生成出库单
+ field:
+  id: 查询单号
+  goods_id: 商品id
+  sku_id: SKU ID
+  goods_name: 商品名
+  sku_name: SKU名
+  number: 出库数量
+  category_name: 商品类型
+  store_name: 仓库名称
+  out_stock_order: 对应出库单
+  out_time: 出库时间
+  remarks: 备注
+  supplier_name: 供应商名称
+  create_user_id: 创建人
+  create_time: 创建时间
+  status: 出库单状态
+  out_type: 出库类型
+  out_stock_person: 出库人员
+  out_stock_id: 出库单号
+ example:
+  goods_id: 14
+  sku_id: 28
+  goods_name: 交换机
+  sku_name: 交换机
+  number: 5
+  category_name: 通讯设备
+  store_name: 通讯仓库
+  out_stock_order: 10857
+  out_time: 2023-10-05 21:13:14
+  remarks: 无
+  supplier_name: xxx公司
+  create_user_id: 857
+  create_time: 202401010000 #2024-01-01 00:00:00
+  status: 0 #未出库
+  out_type: 出库类型
+  out_stock_person: 出库人员

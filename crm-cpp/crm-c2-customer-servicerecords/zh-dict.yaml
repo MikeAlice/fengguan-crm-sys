@@ -1,0 +1,74 @@
+service: 
+ controller:
+  post: 
+   summary: 添加服务记录 
+  delete:
+   summary: 删除服务记录 
+  getList: 
+   summary: 分页查询服务记录
+  export-servicenote:
+   summary: 导出服务记录
+  add: 
+   summary: 添加服务记录 
+  remove:
+   summary: 删除服务记录(批量)
+  modify:
+   summary: 修改服务记录
+ field:
+  customer_id: 客户id  
+  customer_name: 客户姓名
+  service_id: 服务记录id
+  service_id_s: 服务记录id（批量）
+  service_id_list: 服务记录id列表
+  linkman_id: 联系人id
+  linkmain_name: 联系人姓名
+  services: 服务类型
+  servicesmodel: 服务方式
+  price: 价格
+  service_status: 服务记录状态 1=无需处理，2未处理，3=处理中，4处理完成
+  service_time: 服务日期
+  tlen: 服务时长
+  content: 服务内容
+  intro: 备注
+  create_user_id: 创建者id
+  service_create_time: 创建时间
+
+# 公共模块
+common-usage:
+ field:
+  item_list: 数据列表
+
+smsemail:
+ field:
+  mobile: 联系电话
+  email: 电子邮箱
+  customer_no: 客户编号
+  message: 发送的内容
+  ctype: 发送消息的类型 1：节日祝福 2：新品推荐 3：预约提醒
+  name: 客户名称
+  customer_id: 客户id
+  linkman_id: 联系人ID
+ controller:
+  send-sms:
+   summary: 发送短信接口
+  send-email: 
+   summary: 发送邮件接口
+ smsmessage:
+  success: 短信发送成功
+  fail: 短信发送失败
+ emailmessage:
+  success: 邮件发送成功
+  fail: 邮件发送失败
+ contrast_name: 合同名称
+
+xlnt:
+ field:
+  customer_name: 客户名称
+  services: 服务类型
+  servicesmodel: 服务方式
+  service_time: 服务时间
+  tlen: 花费时间
+  content: 服务内容
+  
+
+

@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+ nginx:
+  image: nginx
+  container_name: nginx-crm
+  ports:
+   - "80:80"
+  volumes: 
+   - "$PWD/www:/usr/share/nginx/html"
+   - "$PWD/nginx/conf:/etc/nginx/conf.d"
+   - "$PWD/nginx/logs:/var/log/nginx"
+  depends_on:
+   - "php"
+   - "mysql"
+  networks:
+   - dnmp-crm
+  privileged: true
+ php:
+  image: php:5.4-fpm
+  container_name: php-crm
+  ports:
+   - "9000:9000"
+  volumes:
+   - "$PWD/www:/var/www/html"
+   - "$PWD/php/conf:/usr/local/etc/php/conf.d"
+  networks:
+   - dnmp-crm
+  privileged: true
+ mysql:
+  image: mysql:5.6.51
+  container_name: mysql-crm
+  ports:
+   - "3309:3306"
+  volumes:
+   - "$PWD/mysql/conf/:/etc/mysql/conf.d"
+   - "$PWD/mysql/data/:/var/lib/mysql"
+   - "$PWD/mysql/logs/:/var/log/mysql"
+  environment:
+   - MYSQL_ROOT_PASSWORD=123456
+  networks:
+   - dnmp-crm
+  privileged: true
+networks: 
+ dnmp-crm:

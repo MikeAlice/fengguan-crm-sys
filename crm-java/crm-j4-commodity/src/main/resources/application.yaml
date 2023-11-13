@@ -1,0 +1,5 @@
+server:
+  port: ${sp.commodity}
+spring:
+  application:
+    name: ${sn.commodity}

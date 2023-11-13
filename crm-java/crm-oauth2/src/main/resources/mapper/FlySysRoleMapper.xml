@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.oauth2.mapper.FlySysRoleMapper">
+    <resultMap id="BaseResultMap" type="com.zeroone.star.oauth2.entity.FlySysRole">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="visible" column="visible" jdbcType="INTEGER"/>
+        <result property="parentid" column="parentID" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="intro" column="intro" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="selectByUserId" resultMap="BaseResultMap">
+      select id,`sort`,visible,parentid,name,intro from fly_sys_role where id in (select role_id from fly_sys_user_role where user_id=#{userId})
+    </select>
+
+    <select id="selectByMenuPath" resultMap="BaseResultMap">
+      select id,name from fly_sys_role where id in (select role_id from fly_sys_role_menu where menu_id=(select id from fly_sys_menu where url=#{path}))
+    </select>
+
+    <select id="getMethodRoleList" resultType="com.zeroone.star.oauth2.mp.MethodRoleMP">
+        select fsm.`value` `methodValue`,
+               IFNULL(fsr.`name`, '') `roleName`
+        from fly_sys_method fsm
+        left join fly_sys_role_method fsrm on fsm.`id` = fsrm.`method_id`
+        left join fly_sys_role fsr on fsr.`id` = fsrm.`role_id`
+    </select>
+</mapper>

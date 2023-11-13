@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.systemindex.mapper.CstChanceMapper">
+
+
+    <select id="countBusinessSalestage"
+            resultType="com.zeroone.star.project.vo.j1.systemindex.BusinessStatisticsVO">
+        SELECT  d.`name` statisticsName, COUNT(0) statisticsNumber
+            FROM cst_chance c
+                LEFT JOIN cst_dict  d ON c.salestage=d.dict_id WHERE userID=#{userId} GROUP BY  d.`name`
+
+    </select>
+</mapper>

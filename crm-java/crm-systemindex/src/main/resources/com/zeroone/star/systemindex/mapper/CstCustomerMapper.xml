@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.systemindex.mapper.CstCustomerMapper">
+
+
+    <select id="countCustomerNumber"
+            resultType="com.zeroone.star.project.vo.j1.systemindex.CustomerStatisticsVO">
+        select count(0) as        
+
+    </select>
+
+    <select id="countCustomerSource"
+            resultType="com.zeroone.star.project.vo.j1.systemindex.CustomerStatisticsVO">
+        SELECT COUNT(0) as statisticsNumber,source as statisticsName
+            FROM cst_customer WHERE owner_user_id=#{userId} GROUP BY source;
+
+
+    </select>
+    <select id="countCustomerGrade"
+            resultType="com.zeroone.star.project.vo.j1.systemindex.CustomerStatisticsVO">
+        SELECT COUNT(0) as statisticsNumber,grade as statisticsName
+            FROM cst_customer WHERE owner_user_id=#{userId} GROUP BY grade;
+    </select>
+    <select id="countCustomerIndustry"
+            resultType="com.zeroone.star.project.vo.j1.systemindex.CustomerStatisticsVO">
+        SELECT COUNT(0) as statisticsNumber,industry as statisticsName
+            FROM cst_customer WHERE owner_user_id=#{userId} GROUP BY industry;
+    </select>
+</mapper>

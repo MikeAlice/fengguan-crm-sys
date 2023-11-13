@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.systemmanagement.mapper.CstFieldExtGetPageMapper">
+
+    <resultMap id="CstFieldExtResultMap" type="com.zeroone.star.systemmanagement.entity.CstFieldExt">
+        <id property="fieldExtId" column="field_ext_id"/>
+        <result property="mainTable" column="main_table"/>
+        <result property="extTable" column="ext_table"/>
+        <result property="showName" column="show_name"/>
+        <result property="fieldName" column="field_name"/>
+        <result property="fieldType" column="field_type"/>
+        <result property="defaultValue" column="default"/>
+        <result property="maxlength" column="maxlength"/>
+        <result property="desc" column="desc"/>
+        <result property="visible" column="visible"/>
+        <result property="isSystem" column="is_system"/>
+        <result property="isMust" column="is_must"/>
+        <result property="sort" column="sort"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createUserId" column="create_user_id"/>
+    </resultMap>
+
+    <select id="getFormExtensionFields" resultMap="CstFieldExtResultMap">
+        SELECT *
+        FROM cst_field_ext
+        WHERE visible = 1
+        ORDER BY sort ASC
+        LIMIT #{start}, #{pageSize}
+    </select>
+</mapper>
+

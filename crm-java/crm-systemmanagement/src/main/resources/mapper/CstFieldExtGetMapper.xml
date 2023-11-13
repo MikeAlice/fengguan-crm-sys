@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.systemmanagement.mapper.CstFieldExtMapper">
+    <select id="selectIsSystemById" resultType="java.lang.Integer">
+        SELECT is_system
+        FROM cst_field_ext
+        WHERE field_ext_id = #{id}
+    </select>
+    <!-- 查询所有表单的查询 -->
+    <select id="selectAllFields" resultType="com.zeroone.star.systemmanagement.entity.CstFieldExt">
+        SELECT * FROM cst_field_ext
+    </select>
+
+
+</mapper>

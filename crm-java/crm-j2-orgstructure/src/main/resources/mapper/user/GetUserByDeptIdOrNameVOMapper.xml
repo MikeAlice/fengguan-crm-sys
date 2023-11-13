@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeroone.star.orgstructure.modules.user.mapper.GetUserByDeptIdOrNameVOMapper">
+    <select id="selectAll" resultType="com.zeroone.star.project.vo.j2.orgstructure.user.GetUserByDeptIdOrNameVO">
+        SELECT
+        fuser.*,
+        fdept.`name` deptName,
+        fposition.`name` positionName,
+        frole.`name` roleName
+        FROM
+        fly_sys_user fuser
+        LEFT JOIN fly_sys_dept fdept ON fdept.id = fuser.deptID
+        LEFT JOIN fly_sys_position fposition ON fposition.id = fuser.positionID
+        LEFT JOIN fly_sys_role frole ON frole.id = fuser.roleID
+        <where>
+            <if test="query.deptId != null and query.deptId != 0">
+                fuser.deptID = #{query.deptId}
+            </if>
+            <if test="query.name !=null and query.name != ''">
+                AND fuser.name LIKE concat('%',#{query.name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

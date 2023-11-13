@@ -1,0 +1,62 @@
+﻿other_income_statement:
+ controller:
+  delete:
+   summary: 删除单据
+  get:
+   summary: 分页查询收入单
+  post:
+   summary: 新增收入单
+  export:
+   summary: 导出收入单
+ field:
+  record_id: 单号
+  type_id: 费用类别
+  money: 金额
+  bank_id: 银行账户
+  intro: 描述
+  happen_date: 发生日期
+  create_user_id: 交易人
+  create_time: 交易时间
+expenditures:
+ controller:
+  delete:
+   summary: 删除单据
+  export:
+   summary: 导出单据
+  add:
+   summary: 新增单据
+  query:
+   summary: 查询单据
+ field:
+  record_id: 单号
+  type: 支出类型
+  money: 金额
+  bank: 银行账号
+  happen_date: 产生日期
+  create_user: 创建人
+  create_time: 创建时间
+  intro: 备注
+  latest_happen_date: 最近x天产生（单位：天）
+  latest_create_time: 最近x天创建（单位：天）
+ example:
+  type: 研发费用
+  bank: 江苏银行
+  create_user: 一般管理
+  intro: 用于研发xxx系统
+flowrecord:
+ controller:
+  query:
+   summary: 查询流水记录 
+  export:
+   summary: 导出流水记录  
+ field:
+  bank_id: 银行账号
+  income: 收入
+  expenditure: 支出
+  surplus: 余额
+  type: 支出类型
+  connect_id: 关联单号
+  create_user: 创建人
+  create_time: 创建时间
+  total_income: 支出合计
+  total_expenditure: 收入合计
