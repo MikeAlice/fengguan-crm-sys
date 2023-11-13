@@ -248,7 +248,7 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 
 ## 特别鸣谢
 
-`zero-one-crmsys`的诞生离不开开源软件和社区的支持，感谢以下开源项目及项目维护者：
+`fengguan-crmsys`的诞生离不开开源软件和社区的支持，感谢以下开源项目及项目维护者：
 
 - `spring`：https://github.com/spring-projects
 - `alibaba`：https://github.com/alibaba
